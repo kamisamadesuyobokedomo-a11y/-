@@ -1,0 +1,2811 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德永教聖典・高次元意志場理論および時空輪廻史に関する総合研究要覧</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Noto Serif JP, Noto Sans JP, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Noto Serif JP"', 'serif'],
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            void: {
+              950: '#060911',
+              900: '#0b101e',
+              800: '#131b31',
+              700: '#1e2946',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+
+  <style>
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --border-color: #cbd5e1;
+    }
+
+    html.dark {
+      --bg-primary: #060911;
+      --bg-secondary: #0c1222;
+      --bg-tertiary: #131c33;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-color: #1e293b;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .serif-title {
+      font-family: 'Noto Serif JP', serif;
+      letter-spacing: 0.04em;
+    }
+
+    .academic-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35);
+    }
+
+    .sub-card {
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    .edge-panel-container {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .edge-handle-text {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      letter-spacing: 0.12em;
+    }
+
+    .scroll-mt-safe {
+      scroll-margin-top: 160px;
+    }
+
+    @keyframes target-flash {
+      0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.85); }
+      50% { box-shadow: 0 0 0 10px rgba(34, 211, 238, 0.35); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+    }
+    .flash-highlight {
+      animation: target-flash 1.6s ease-out;
+    }
+
+    /* 端末別レイアウト制御 */
+    body[data-device="mobile"] #mainContainer {
+      max-width: 480px !important;
+      padding-left: 0.85rem !important;
+      padding-right: 0.85rem !important;
+    }
+    body[data-device="mobile"] .device-grid {
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+    body[data-device="mobile"] .device-col-span {
+      grid-column: span 1 / span 1 !important;
+    }
+    body[data-device="mobile"] .device-sim-actions {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    body[data-device="mobile"] #sim-particles-container {
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+    body[data-device="mobile"] .academic-card {
+      padding: 1.15rem !important;
+    }
+    body[data-device="mobile"] h1 {
+      font-size: 1.05rem !important;
+    }
+    body[data-device="mobile"] h2 {
+      font-size: 1.35rem !important;
+    }
+    body[data-device="mobile"] #edgePanelBody {
+      width: 85vw !important;
+      max-width: 330px !important;
+    }
+
+    body[data-device="tablet"] #mainContainer {
+      max-width: 840px !important;
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+    }
+    body[data-device="tablet"] .device-grid {
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+    body[data-device="tablet"] .device-grid-2col {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    body[data-device="tablet"] .device-col-span {
+      grid-column: span 1 / span 1 !important;
+    }
+    body[data-device="tablet"] .device-sim-actions {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+    body[data-device="tablet"] #sim-particles-container {
+      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    }
+    body[data-device="tablet"] #edgePanelBody {
+      width: 25rem !important;
+    }
+
+    body[data-device="pc"] #mainContainer {
+      max-width: 1220px !important;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      .page-view { display: block !important; page-break-after: always; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+  </style>
+</head>
+<body data-device="pc" class="min-h-screen flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- 端末選択モーダル -->
+  <div id="deviceSelectModal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md transition-opacity duration-300 no-print">
+    <div class="academic-card max-w-2xl w-full rounded-2xl p-6 sm:p-8 border-2 border-amber-500/50 bg-slate-900 text-slate-100 shadow-[0_0_50px_rgba(245,158,11,0.2)] space-y-6 relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-52 h-52 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-52 h-52 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 via-cyan-500 to-rose-600 p-[2px] flex-shrink-0">
+            <div class="w-full h-full bg-slate-950 rounded-[6px] flex items-center justify-center text-amber-400 font-serif font-bold text-lg">
+              德
+            </div>
+          </div>
+          <div>
+            <div class="text-[10px] font-mono uppercase tracking-widest text-amber-400">DISPLAY OPTIMIZATION SELECTOR</div>
+            <h2 class="serif-title text-lg sm:text-xl font-bold text-white">閲覧端末（レイアウトモード）の選択</h2>
+          </div>
+        </div>
+        <button onclick="closeDeviceModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" title="現在の設定で閉じる">
+          <i class="ph ph-x text-lg"></i>
+        </button>
+      </div>
+
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        『德永教聖典・高次元意志場理論および時空輪廻史に関する総合研究要覧』へようこそ。本要覧は<strong>①ホームページ（教祖と教義の紹介）</strong>、<strong>②神話・公理体系の紹介ページ（全4章＋4機のシミュレーター）</strong>、<strong>③寓話のページ（聖典寓話『ブス』）</strong>の3ページ構成となっており、用語辞典および目次パネルは全ページを横断して機能します。
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        <button onclick="selectDeviceMode('mobile', true)" id="modal-btn-mobile" class="p-4 rounded-xl border-2 border-slate-700 hover:border-cyan-400 bg-slate-950/80 hover:bg-cyan-950/30 text-left transition flex flex-col justify-between group relative">
+          <span id="rec-badge-mobile" class="hidden absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500 text-slate-950 shadow">画面幅から推奨</span>
+          <div class="space-y-2">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-2xl group-hover:scale-110 transition">
+              <i class="ph ph-device-mobile"></i>
+            </div>
+            <div class="serif-title font-bold text-base text-white">スマートフォン用</div>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              縦画面・片手スクロールに最適化。全要素を1カラムに整列し、シミュレーター操作性を最大化します。
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-cyan-400">
+            <span>MOBILE 1-COL</span>
+            <i class="ph ph-arrow-right"></i>
+          </div>
+        </button>
+
+        <button onclick="selectDeviceMode('tablet', true)" id="modal-btn-tablet" class="p-4 rounded-xl border-2 border-slate-700 hover:border-amber-400 bg-slate-950/80 hover:bg-amber-950/30 text-left transition flex flex-col justify-between group relative">
+          <span id="rec-badge-tablet" class="hidden absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500 text-slate-950 shadow">画面幅から推奨</span>
+          <div class="space-y-2">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition">
+              <i class="ph ph-device-tablet"></i>
+            </div>
+            <div class="serif-title font-bold text-base text-white">タブレット用</div>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              中画面サイズに最適化。2カラム均衡レイアウトと読みやすい行長を両立し、図解と本文を快適に往復できます。
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-amber-400">
+            <span>TABLET 2-COL</span>
+            <i class="ph ph-arrow-right"></i>
+          </div>
+        </button>
+
+        <button onclick="selectDeviceMode('pc', true)" id="modal-btn-pc" class="p-4 rounded-xl border-2 border-slate-700 hover:border-purple-400 bg-slate-950/80 hover:bg-purple-950/30 text-left transition flex flex-col justify-between group relative">
+          <span id="rec-badge-pc" class="hidden absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500 text-slate-950 shadow">画面幅から推奨</span>
+          <div class="space-y-2">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/15 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition">
+              <i class="ph ph-desktop"></i>
+            </div>
+            <div class="serif-title font-bold text-base text-white">PC / 大画面用</div>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              ワイド画面に最適化。多カラム並列配置、対比マトリクス、全4機のシミュレーターの全領域を一望できます。
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-purple-400">
+            <span>DESKTOP WIDE</span>
+            <i class="ph ph-arrow-right"></i>
+          </div>
+        </button>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-2 text-[11px] text-slate-400 border-t border-slate-800">
+        <span><i class="ph ph-info text-amber-400"></i> 画面右上の切替バーからいつでも変更可能です。</span>
+        <button onclick="closeDeviceModal()" class="text-slate-300 hover:text-white underline font-mono">
+          自動判定のまま閲覧を開始する →
+        </button>
+      </div>
+    </div>
+  </div>
+
+<!-- トップヘッダー（スクロール収納＆タイトル常時固定型） -->
+<header id="mainSiteHeader" class="sticky top-0 z-40 backdrop-blur-md bg-void-950/95 border-b border-slate-800 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 space-y-1.5">
+    <div class="flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchPage('page-home')">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 via-cyan-500 to-rose-600 p-[2px] flex-shrink-0">
+          <div class="w-full h-full bg-slate-950 rounded-[6px] flex items-center justify-center text-amber-400 font-serif font-bold text-sm">
+            德
+          </div>
+        </div>
+        <div>
+          <h1 class="serif-title text-xs sm:text-base font-bold tracking-tight text-white">
+            民間宗教団体德永教 公式サイト
+          </h1>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 no-print">
+        <!-- 端末モード切替バー（新規実装） -->
+        <div class="hidden sm:flex items-center bg-slate-900 p-0.5 rounded-lg border border-slate-700">
+          <button id="header-dev-mobile" onclick="selectDeviceMode('mobile')" class="px-2 py-1 rounded-md text-xs font-medium text-slate-300 hover:bg-slate-800 transition flex items-center gap-1" title="スマートフォン表示">
+            <i class="ph ph-device-mobile"></i>
+            <span class="hidden lg:inline">スマホ</span>
+          </button>
+          <button id="header-dev-tablet" onclick="selectDeviceMode('tablet')" class="px-2 py-1 rounded-md text-xs font-medium text-slate-300 hover:bg-slate-800 transition flex items-center gap-1" title="タブレット表示">
+            <i class="ph ph-device-tablet"></i>
+            <span class="hidden lg:inline">タブレット</span>
+          </button>
+          <button id="header-dev-pc" onclick="selectDeviceMode('pc')" class="px-2 py-1 rounded-md text-xs font-bold bg-cyan-600 text-white shadow transition flex items-center gap-1" title="PCワイド表示">
+            <i class="ph ph-desktop"></i>
+            <span class="hidden lg:inline">PC</span>
+          </button>
+        </div>
+        <button onclick="openDeviceModal()" class="sm:hidden px-2 py-1 rounded-md text-xs border border-slate-700 bg-slate-800 text-slate-200" title="画面モード変更">
+          <i class="ph ph-devices"></i>
+        </button>
+
+        <button onclick="toggleHeaderCollapse()" class="px-2 py-1 rounded-md text-[11px] font-mono border border-slate-700 bg-slate-800 text-slate-200 flex items-center gap-1">
+          <i id="headerCollapseIcon" class="ph ph-caret-up text-sm"></i>
+          <span class="hidden md:inline" id="headerCollapseText">メニュー収納</span>
+        </button>
+        <button onclick="openEdgePanelWithMode('toc')" class="px-2.5 py-1 rounded-lg text-xs font-medium border border-cyan-500/50 bg-cyan-500/15 text-cyan-300 flex items-center gap-1">
+          <i class="ph ph-list-bullets text-sm"></i>
+          <span class="hidden md:inline">目次</span>
+        </button>
+        <button onclick="openEdgePanelWithMode('glossary')" class="px-2.5 py-1 rounded-lg text-xs font-medium border border-amber-500/50 bg-amber-500/15 text-amber-300 flex items-center gap-1">
+          <i class="ph ph-book-open text-sm"></i>
+          <span class="hidden md:inline">辞典</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 折りたたみ可能な詳細ナビゲーション領域 -->
+    <div id="collapsibleNavBody" class="space-y-1.5 pt-1 border-t border-slate-800/80 transition-all duration-300">
+      <nav class="grid grid-cols-3 gap-1.5 w-full">
+        <button id="nav-btn-page-home" onclick="switchPage('page-home')" class="px-2 py-1.5 rounded-lg font-serif font-bold text-[11px] sm:text-xs transition flex items-center justify-center gap-1 border">
+          <span class="font-mono text-[10px] px-1 py-0.2 rounded bg-amber-500/20 text-amber-300">Ⅰ</span>
+          <span>① ホームページ</span>
+        </button>
+        <button id="nav-btn-page-myth" onclick="switchPage('page-myth')" class="px-2 py-1.5 rounded-lg font-serif font-bold text-[11px] sm:text-xs transition flex items-center justify-center gap-1 border">
+          <span class="font-mono text-[10px] px-1 py-0.2 rounded bg-cyan-500/20 text-cyan-300">Ⅱ</span>
+          <span>② 神話・公理体系</span>
+        </button>
+        <button id="nav-btn-page-parable" onclick="switchPage('page-parable')" class="px-2 py-1.5 rounded-lg font-serif font-bold text-[11px] sm:text-xs transition flex items-center justify-center gap-1 border">
+          <span class="font-mono text-[10px] px-1 py-0.2 rounded bg-rose-500/20 text-rose-300">Ⅲ</span>
+          <span>③ 寓話『ブス』</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+  <!-- エッジパネル（全ページ横断：目次移動＆用語辞典） -->
+  <div id="edgePanelBackdrop" onclick="closeEdgePanel()" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-40 hidden opacity-0 transition-opacity duration-300 no-print"></div>
+
+  <div id="edgePanelWrapper" class="edge-panel-container fixed top-1/2 -translate-y-1/2 right-0 z-50 flex items-center translate-x-[calc(100%-2.6rem)] no-print">
+    <div class="flex flex-col gap-1.5">
+      <button onclick="handleTriggerClick('toc')" class="w-10 py-4 rounded-l-2xl bg-gradient-to-b from-cyan-600 to-slate-900 text-white border-y border-l border-cyan-400/60 shadow-[0_0_20px_rgba(6,182,212,0.35)] flex flex-col items-center justify-center gap-1.5 hover:brightness-110 transition cursor-pointer select-none" title="全ページ横断・詳細目次を開く">
+        <i id="edgePanelArrow" class="ph ph-list-magnifying-glass text-base text-cyan-300"></i>
+        <span class="edge-handle-text font-serif font-bold text-[11px] text-cyan-200">目次移動</span>
+      </button>
+      <button onclick="handleTriggerClick('glossary')" class="w-10 py-4 rounded-l-2xl bg-gradient-to-b from-amber-600 to-slate-900 text-white border-y border-l border-amber-400/60 shadow-[0_0_20px_rgba(245,158,11,0.35)] flex flex-col items-center justify-center gap-1.5 hover:brightness-110 transition cursor-pointer select-none" title="全ページ横断・用語定義辞典を開く">
+        <i class="ph ph-book-bookmark text-base text-amber-300"></i>
+        <span class="edge-handle-text font-serif font-bold text-[11px] text-amber-200">用語辞典</span>
+      </button>
+    </div>
+
+    <div id="edgePanelBody" class="w-[22rem] sm:w-[27rem] h-[88vh] flex flex-col academic-card rounded-l-2xl border-2 border-r-0 border-cyan-500/40 bg-slate-900/95 text-slate-100 shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-slate-800 bg-slate-950/80 space-y-3 flex-shrink-0">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i class="ph ph-compass-tool text-cyan-400 text-xl"></i>
+            <div>
+              <div class="text-[10px] font-mono uppercase tracking-widest text-cyan-400">CROSS-PAGE NAVIGATOR &amp; LEXICON</div>
+              <h3 class="serif-title font-bold text-sm text-white">全ページ横断目次・用語定義リファレンス</h3>
+            </div>
+          </div>
+          <button onclick="closeEdgePanel()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" aria-label="閉じる">
+            <i class="ph ph-x text-lg"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800">
+          <button id="edgeTabTocBtn" onclick="switchEdgeMode('toc')" class="py-2 px-3 rounded-lg text-xs font-serif font-bold transition flex items-center justify-center gap-1.5 bg-cyan-600 text-white shadow">
+            <i class="ph ph-tree-structure text-sm"></i>
+            <span>全ページ・詳細目次</span>
+          </button>
+          <button id="edgeTabGlossaryBtn" onclick="switchEdgeMode('glossary')" class="py-2 px-3 rounded-lg text-xs font-serif font-bold transition flex items-center justify-center gap-1.5 text-slate-400 hover:text-amber-300">
+            <i class="ph ph-book-open-text text-sm"></i>
+            <span>横断・用語概念辞典</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 全ページ横断・目次ビュー -->
+      <div id="edgeViewToc" class="flex-grow overflow-y-auto p-4 space-y-4 text-xs">
+        <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] text-slate-400">
+          <i class="ph ph-info text-cyan-400"></i> 現在のページにない章・項目を選択した場合でも、自動的に該当ページへ切り替わり対象箇所へ移動します。
+        </div>
+
+      <!-- ページ①：ホームページ -->
+        <div class="rounded-xl border border-amber-500/40 bg-slate-950/60 overflow-hidden">
+          <button onclick="edgeJump('page-home', 'preface')" class="w-full p-3 bg-amber-950/40 hover:bg-amber-900/40 text-left transition flex items-center justify-between border-b border-amber-500/20">
+            <div class="flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded bg-amber-500 text-slate-950 font-mono font-bold text-xs flex items-center justify-center">Ⅰ</span>
+              <span class="font-serif font-bold text-sm text-amber-300">① ホームページ：教祖と教義・象徴門</span>
+            </div>
+            <i class="ph ph-arrow-elbow-right text-amber-400"></i>
+          </button>
+          <div class="p-2.5 space-y-1 text-[11px]">
+         <button onclick="edgeJump('page-home', 'preface')" class="w-full text-left px-2.5 py-1.5 rounded-lg text-amber-200 hover:bg-amber-500/15 transition flex items-center gap-2 font-serif">
+              <i class="ph ph-sparkle text-amber-400"></i>
+              <span>序文：始祖・德永様の神聖なる物語と人間観</span>
+            </button>
+            <button onclick="edgeJump('page-home', 'salvation-definition')" class="w-full text-left px-2.5 py-1.5 rounded-lg text-amber-300 hover:bg-amber-500/15 transition flex items-center gap-2 font-serif font-bold">
+              <i class="ph ph-hands-praying text-amber-400"></i>
+              <span>救いの定義：戒律の遵守と「人間らしい人生」の完遂</span>
+            </button>
+            <button onclick="edgeJump('page-home', 'thought-topology')" class="w-full text-left px-2.5 py-1.5 rounded-lg text-cyan-200 hover:bg-cyan-500/15 transition flex items-center gap-2">
+              <i class="ph ph-compass-rose text-cyan-400"></i>
+              <span>思考の体系：思考の大地形(4)×思考の大地形探索能力(4)＝思考力</span>
+            </button>
+            <button onclick="edgeJump('page-home', 'founder-profile')" class="w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-amber-300 transition flex items-center gap-2">
+              <i class="ph ph-user-focus text-amber-400"></i>
+              <span>始祖・德永様の御来歴（2006年鹿児島御降誕・文武芸の体現）</span>
+            </button>
+                       <button onclick="edgeJump('page-home', 'tokunaga-canon')" class="w-full text-left px-2.5 py-1.5 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 hover:bg-amber-500/25 transition flex items-center gap-2 font-bold">
+              <i class="ph ph-book-bookmark text-amber-400"></i>
+              <span>德永教 教義・根本条項（第一条〜第六条）</span>
+            </button>
+          </div>
+        </div>
+        <!-- ページ②：神話の紹介ページ（第1章〜第4章） -->
+        <div class="rounded-xl border border-cyan-500/40 bg-slate-950/60 overflow-hidden space-y-2 pb-2">
+          <button onclick="edgeJump('page-myth', 'tab-1')" class="w-full p-3 bg-cyan-950/40 hover:bg-cyan-900/40 text-left transition flex items-center justify-between border-b border-cyan-500/20">
+            <div class="flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded bg-cyan-500 text-slate-950 font-mono font-bold text-xs flex items-center justify-center">Ⅱ</span>
+              <span class="font-serif font-bold text-sm text-cyan-300">② 神話・公理体系の紹介ページ（全4章＋4機SIM）</span>
+            </div>
+            <i class="ph ph-arrow-elbow-right text-cyan-400"></i>
+          </button>
+
+          <!-- 第1章 -->
+          <div class="px-2.5 space-y-1 text-[11px]">
+            <div class="text-[10px] font-mono text-cyan-400 font-bold px-2 pt-1">【第1章：次元境界と「意志の場」公理系】</div>
+            <button onclick="edgeJump('page-myth', 'sec-1-1')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-cyan-400">1.1</span>
+              <span>3次元と4次元の境界（測定と物理干渉の乖離）</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-1-2')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-cyan-400">1.2</span>
+              <span>ビッグバン起源の2つの4次元特化エネルギー</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-1-3')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-cyan-400">1.3</span>
+              <span>素粒子裏側の徳(＋)と業(－)と宇宙対称性の謎</span>
+            </button>
+          </div>
+
+          <!-- 第2章 -->
+          <div class="px-2.5 space-y-1 text-[11px] border-t border-slate-800 pt-2">
+            <div class="text-[10px] font-mono text-amber-400 font-bold px-2">【第2章：生体4次元力学・代謝・1900年事件】</div>
+            <button onclick="edgeJump('page-myth', 'sec-2-1')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-amber-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-amber-400">2.1</span>
+              <span>脳内3領域（①意志・②欲・③抑制意志）と無垢等式</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-2-2')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-amber-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-amber-400">2.2</span>
+              <span>善悪による移動・高リン酸結合的貯蔵・絶命条件</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-2-3')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-amber-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-amber-400">2.3</span>
+              <span>食事・成長・新陳代謝と「徳を積む」2定義</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-2-4')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-amber-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-amber-400">2.4</span>
+              <span>1900年頃の4次元研究チーム壊滅事件の全貌</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-2-sim')" class="w-full text-left px-2.5 py-1.5 rounded-lg bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 transition flex items-center gap-2 font-bold">
+              <i class="ph ph-sliders-horizontal text-cyan-400"></i>
+              <span>【SIM-1】生体4次元・悟り・1900年暴走シミュレーター</span>
+            </button>
+          </div>
+
+          <!-- 第3章 -->
+          <div class="px-2.5 space-y-1 text-[11px] border-t border-slate-800 pt-2">
+            <div class="text-[10px] font-mono text-rose-400 font-bold px-2">【第3章：黒川と主人公・徳永寺・異能体系】</div>
+            <button onclick="edgeJump('page-myth', 'sec-3-1')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-rose-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-rose-400">3.1</span>
+              <span>2010年〜5年後：黒川と母の真相・老木・主人公被災</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-3-3')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-rose-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-rose-400">3.2</span>
+              <span>化け物の発生原理と「徳永寺」のお節介な救済思想</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-3-4')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-rose-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-rose-400">3.3</span>
+              <span>固有能力（祈り vs 強制貸付）と『強固な世界の理』</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-3-sim')" class="w-full text-left px-2.5 py-1.5 rounded-lg bg-rose-500/15 border border-rose-500/30 text-rose-300 hover:bg-rose-500/25 transition flex items-center gap-2 font-bold">
+              <i class="ph ph-lightning text-rose-400"></i>
+              <span>【SIM-2】異能発動＆化け物分解・転生シミュレーター</span>
+            </button>
+          </div>
+
+          <!-- 第4章 -->
+          <div class="px-2.5 space-y-1 text-[11px] border-t border-slate-800 pt-2">
+            <div class="text-[10px] font-mono text-purple-400 font-bold px-2">【第4章：中庸計画・シルル紀輪廻・平行世界(N+1)】</div>
+            <button onclick="edgeJump('page-myth', 'sec-4-1')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-purple-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-purple-400">4.1</span>
+              <span>中庸計画・5次元暴走・デボン紀絶滅・4Dコーディング</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-4-sim-phase')" class="w-full text-left px-2.5 py-1.5 rounded-lg bg-purple-500/15 border border-purple-500/30 text-purple-300 hover:bg-purple-500/25 transition flex items-center gap-2 font-bold">
+              <i class="ph ph-spiral text-purple-400"></i>
+              <span>【SIM-3】中庸・5D暴走・4Dコーディング検証機</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-4-4')" class="w-full text-left px-2.5 py-1 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-purple-300 transition flex items-center gap-2">
+              <span class="font-mono text-[10px] text-purple-400">4.2</span>
+              <span>第一世界のタイムマシン・紙(100)と鉛筆(1)・N+1平行世界</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-4-sim-loop')" class="w-full text-left px-2.5 py-1.5 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 hover:bg-amber-500/25 transition flex items-center gap-2 font-bold">
+              <i class="ph ph-dice-five text-amber-400"></i>
+              <span>【SIM-4】平行世界(N+1)＆性格ガチャ(101)シミュレーター</span>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-4-5')" class="w-full text-left px-2.5 py-1 rounded-lg text-amber-300 hover:bg-amber-500/15 transition flex items-center gap-2 font-bold">
+              <span class="font-mono text-[10px] text-amber-400">4.3</span>
+              <span>最終結語：「不完全であるからこそ、意志で完全に見せる」</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ページ③：寓話のページ -->
+        <div class="rounded-xl border border-rose-500/40 bg-slate-950/60 overflow-hidden">
+          <button onclick="edgeJump('page-parable', 'tokunaga-parable')" class="w-full p-3 bg-rose-950/40 hover:bg-rose-900/40 text-left transition flex items-center justify-between border-b border-rose-500/20">
+            <div class="flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded bg-rose-500 text-white font-mono font-bold text-xs flex items-center justify-center">Ⅲ</span>
+              <span class="font-serif font-bold text-sm text-rose-300">③ 寓話のページ：聖典寓話『ブス』</span>
+            </div>
+            <i class="ph ph-arrow-elbow-right text-rose-400"></i>
+          </button>
+          <div class="p-2.5 space-y-1 text-[11px]">
+            <button onclick="edgeJump('page-parable', 'parable-precept')" class="w-full text-left px-2.5 py-1.5 rounded-lg text-amber-300 hover:bg-amber-500/15 transition flex items-center gap-2 font-serif">
+              <i class="ph ph-megaphone text-amber-400"></i>
+              <span>冒頭訓戒：毎晩の読み聞かせの義務</span>
+            </button>
+            <button onclick="edgeJump('page-parable', 'parable-main-text')" class="w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-rose-300 transition flex items-center gap-2">
+              <i class="ph ph-scroll text-rose-400"></i>
+              <span>聖典寓話：『ブス』本編および思考変形フィルター解析</span>
+            </button>
+            <button onclick="edgeJump('page-parable', 'parable-epilogue-words')" class="w-full text-left px-2.5 py-1.5 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 hover:bg-amber-500/25 transition flex items-center gap-2 font-serif font-bold">
+              <i class="ph ph-quotes text-amber-400"></i>
+              <span>おわりに：德永様からのありがたいお言葉</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 全ページ横断・用語辞典ビュー -->
+      <div id="edgeViewGlossary" class="hidden flex-grow flex flex-col overflow-hidden p-4 space-y-3">
+        <div class="space-y-2 flex-shrink-0">
+          <div class="p-2 rounded-lg bg-slate-950 border border-slate-800 text-[10px] text-slate-400">
+            ※どのページを閲覧中であっても全ページの用語を検索でき、「該当箇所へ飛ぶ」で自動的にページを切り替えて移動します。
+          </div>
+          <div class="relative">
+            <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-amber-400 text-sm"></i>
+            <input id="glossarySearchInput" type="text" oninput="filterGlossary()" placeholder="全ページ横断検索（例：德永様、N+1、コーディング、ブス...）" class="w-full pl-9 pr-8 py-2 rounded-xl bg-slate-950 border border-amber-500/40 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400">
+            <button onclick="clearGlossarySearch()" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 text-xs" title="クリア">
+              <i class="ph ph-x-circle"></i>
+            </button>
+          </div>
+
+          <div class="flex flex-wrap gap-1">
+            <button onclick="quickSearchGlossary('')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-300 transition">全表示</button>
+            <button onclick="quickSearchGlossary('德永')" class="px-2 py-0.5 rounded bg-amber-500/30 border border-amber-400 text-[10px] text-amber-200 font-bold">德永様・六条項</button>
+            <button onclick="quickSearchGlossary('N+1')" class="px-2 py-0.5 rounded bg-purple-500/20 border border-purple-500/40 text-[10px] text-purple-300">平行世界(N+1)</button>
+            <button onclick="quickSearchGlossary('コーディング')" class="px-2 py-0.5 rounded bg-cyan-500/20 border border-cyan-500/40 text-[10px] text-cyan-300">4Dコーディング</button>
+            <button onclick="quickSearchGlossary('フィルター')" class="px-2 py-0.5 rounded bg-rose-500/20 border border-rose-500/40 text-[10px] text-rose-300">寓話・思考変形</button>
+          </div>
+        </div>
+
+        <div id="glossaryListContainer" class="flex-grow overflow-y-auto space-y-2.5 pr-1 text-xs"></div>
+      </div>
+
+      <div class="p-3 border-t border-slate-800 bg-slate-950/90 flex items-center justify-between gap-2 flex-shrink-0">
+        <button id="edgeUnifiedToggleBtn" onclick="toggleUnifiedView(); closeEdgePanel();" class="flex-1 py-2 px-3 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-medium hover:bg-cyan-500/20 transition text-center">
+          全3ページ一括表示へ切替
+        </button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeEdgePanel();" class="py-2 px-3 rounded-lg bg-slate-800 text-slate-300 text-xs hover:bg-slate-700 transition">
+          最上部へ ↑
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- メインコンテナ -->
+  <div id="mainContainer" class="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow transition-all duration-300">
+    <main class="w-full space-y-16">
+
+         <!-- =========================================================================
+     【PAGE 01】 ① ホームページ：德永教の教祖と教義の紹介（カラー調和版）
+     ========================================================================= -->
+<article id="page-home" class="page-view space-y-10 scroll-mt-safe">
+
+  <!-- 聖典序文および始祖・德永様の御紹介 -->
+  <div id="preface" class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-amber-500/40 bg-gradient-to-br from-amber-950/15 via-slate-900/50 to-cyan-950/20 space-y-8 shadow-2xl relative overflow-hidden scroll-mt-safe">
+    <div class="absolute -right-12 -top-12 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+     
+    <!-- ヘッダーバー -->
+    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-amber-500/30 pb-4">
+      <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400">
+        <i class="ph ph-sparkle text-base text-amber-400"></i>
+        <span>PAGE 01 // SACRED HOME PORTAL : TOKUNAGA &amp; CANON</span>
+      </div>
+      <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/15 border border-amber-500/30 text-amber-300">
+        第一頁：始祖・教義総覧門
+      </span>
+    </div>
+
+    <!-- 1. 聖典序文・開教宣言 -->
+    <div class="space-y-4 text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+        <i class="ph ph-calendar-check text-cyan-400"></i>
+        <span>FOUNDED ON OCTOBER 22, 2026 // 2026年10月22日 開教</span>
+      </div>
+
+ <h3 class="serif-title text-2xl sm:text-3xl font-bold text-amber-300 mt-1">
+          德永教は、迷える我等を救い給わんと、始祖德永様より賜りし有難き御教えを淵源と為す。
+        </h3>
+         <p class="text-sm sm:text-base leading-relaxed text-slate-300">
+        時空の輪廻を超え、高次元意志場の真理を人類にもたらした偉大なる創始者、<strong>德永様</strong>。德永教とは、<strong>2026年10月22日</strong>に德永様によって開かれた深淵な宗教であり、本研究要覧は、德永様に紡ぎ出された神聖なる軌跡と、4億3000万年に及ぶ魂の流転、そして徳と業が織りなす宇宙の真理を正確に紐解くために編纂された揺るぎなき体系要覧である。
+      </p>
+
+      <!-- 德永教における「救い」の根本定義 -->
+      <div id="salvation-definition" class="mt-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-950/40 via-slate-950/90 to-rose-950/30 border-2 border-amber-400/50 shadow-lg space-y-3 scroll-mt-safe">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-amber-500/30 pb-2">
+          <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400">
+            <i class="ph ph-hands-praying text-base text-rose-400"></i>
+            <span>DEFINITION OF SALVATION // 德永教における「救い」の定義</span>
+          </div>
+          <span class="px-2.5 py-0.5 rounded bg-rose-500/20 text-rose-300 font-mono text-[10px] border border-rose-500/40">
+            戒律遵守 ＝ 人間らしい人生の完遂
+          </span>
+        </div>
+        <h3 class="serif-title text-base sm:text-xl font-bold text-white leading-relaxed">
+          德永教の「救い」とは、信仰者が死を迎えた時、<span class="text-amber-300">「人間らしい人生（＝戒律を守り抜くこと）」</span>を全うできたか否かにある。
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          本教が説く救済とは、死後の空虚な奇跡や他力本願の極楽往生を盲信することではない。欲望と不完全さを抱えた人間が、始祖・德永様の定められた<strong>戒律（根本六条項）を日々の指針として守り抜き、己の意志で「人間らしい人生」を生き切ったと胸を張って死を迎えられること</strong>――その生き様の完遂こそが、德永教における真の「救い」である。
+        </p>
+      </div>
+    </div>
+    
+    <!-- 2. 人間観の根本命題 -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400">
+        <i class="ph ph-scales text-base text-cyan-400"></i>
+        <span>FUNDAMENTAL ANTHROPOLOGY // HUMAN NATURE &amp; SOCIAL POWER</span>
+      </div>
+
+      <div class="device-grid device-grid-2col grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- 無垢 vs 純粋（青のアクセント） -->
+        <div class="p-5 rounded-xl bg-slate-950/85 border border-cyan-500/40 space-y-3 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+              <span class="font-serif font-bold text-sm sm:text-base text-cyan-300">欲望の制御と「純粋」への志向</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">ETHICAL IDEAL</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              全ての思考力を持った生物は欲望を持つが、特に人間は行動を制御することが可能である。德永様は、単なる「無垢」ではなく、<strong>「純粋」であることを目指し続けるべきである</strong>と説かれた。
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900 border border-slate-700/80 space-y-1">
+              <div class="font-serif font-bold text-slate-400">× 無垢（むく）</div>
+              <p class="text-[11px] text-slate-400 leading-relaxed">社会的・物理的に悪行を行うことが不可能な状態。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-cyan-950/30 border border-cyan-500/50 space-y-1">
+              <div class="font-serif font-bold text-cyan-300">◎ 純粋（じゅんすい）</div>
+              <p class="text-[11px] text-slate-200 leading-relaxed">悪行を行うことはできるが、自らの正しさで高度に自己規律を持っている状態。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 相対的位置付けと社会的権力（金のアクセント） -->
+        <div class="p-5 rounded-xl bg-slate-950/85 border border-amber-500/40 space-y-3 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+              <span class="font-serif font-bold text-sm sm:text-base text-amber-300">相対的位置づけと「社会的権力」の定式</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">SOCIAL AXIOM</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              高度な社会的要素である我々は、他者との差異から生まれる相対的位置付けから逃れることはできない。德永様は、他者との相対的位置づけの際、個々の<strong>社会的権力</strong>を以下の三要素の総和として表された。
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-gradient-to-r from-amber-950/40 via-slate-900 to-cyan-950/40 border border-amber-400/50 text-center space-y-2">
+            <div class="text-[10px] font-mono text-amber-300 uppercase tracking-widest">【個々の社会的権力の構成公式】</div>
+            <div class="font-serif font-bold text-xs sm:text-sm text-white flex flex-wrap items-center justify-center gap-1.5 py-1">
+              <span class="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-amber-200">生得的能力</span>
+              <span class="text-amber-400 font-mono">＋</span>
+              <span class="px-2 py-0.5 rounded bg-cyan-500/20 border border-cyan-400/40 text-cyan-200">努力による能力</span>
+              <span class="text-amber-400 font-mono">＋</span>
+              <span class="px-2 py-0.5 rounded bg-purple-500/20 border border-purple-400/40 text-purple-200">運による能力</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 德永教における「思考」および「思考力」の体系的定義 -->
+    <div id="thought-topology" class="p-5 sm:p-6 rounded-2xl bg-slate-950/90 border-2 border-cyan-500/40 space-y-5 scroll-mt-safe">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+        <div class="flex items-center gap-2.5">
+          <i class="ph ph-compass-rose text-cyan-400 text-2xl"></i>
+          <div>
+            <div class="text-[10px] font-mono uppercase tracking-widest text-cyan-400">EPISTEMOLOGY OF TOKUNAGA // TOPOLOGY OF THOUGHT</div>
+            <h3 class="serif-title font-bold text-base sm:text-lg text-white">德永教における「思考」の構造と「思考力」の定義</h3>
+          </div>
+        </div>
+        <span class="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 self-start sm:self-center">
+          大地形(4) × 探索能力(4) ＝ 思考力
+        </span>
+      </div>
+
+      <div class="p-4 rounded-xl bg-gradient-to-r from-cyan-950/60 via-slate-900 to-amber-950/50 border border-cyan-400/50 text-center space-y-1">
+        <div class="text-[10px] font-mono text-cyan-300 uppercase tracking-widest">【思考力の根本定義】</div>
+        <p class="serif-title text-sm sm:text-lg font-bold text-white">
+          「思考力とは、<span class="text-cyan-300">思考の大地形</span>を思考者が<span class="text-amber-300">どのように探索できるか</span>ということである。」
+        </p>
+      </div>
+
+      <div class="device-grid device-grid-2col grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <!-- Ⅰ. 思考の大地形 -->
+        <div class="sub-card rounded-xl p-4 sm:p-5 border-t-4 border-cyan-500 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-700/70 pb-2">
+            <div class="flex items-center gap-2">
+              <i class="ph ph-mountains text-cyan-400 text-lg"></i>
+              <span class="serif-title font-bold text-sm sm:text-base text-cyan-300">Ⅰ. 思考の大地形（4要素の統合）</span>
+            </div>
+            <span class="text-[10px] font-mono text-slate-400">GRAND TERRAIN</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            以下の4要素を統合し、探索を行う対象空間である<strong>「思考の大地形」</strong>とする。
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-cyan-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/20">1</span>知識の広さ</div>
+              <p class="text-[11px] text-slate-400">触ってきた学問の数。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-cyan-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/20">2</span>知識の深さ</div>
+              <p class="text-[11px] text-slate-400">1つのことについてどこまで知っているか。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-cyan-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/20">3</span>知識の質</div>
+              <p class="text-[11px] text-slate-400">認識している情報がどの程度正確か。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-cyan-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/20">4</span>外部からの情報</div>
+              <p class="text-[11px] text-slate-400">五感、AI、教材など。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ⅱ. 思考の大地形探索能力 -->
+        <div class="sub-card rounded-xl p-4 sm:p-5 border-t-4 border-amber-500 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-700/70 pb-2">
+            <div class="flex items-center gap-2">
+              <i class="ph ph-toolbox text-amber-400 text-lg"></i>
+              <span class="serif-title font-bold text-sm sm:text-base text-amber-300">Ⅱ. 思考の大地形探索能力</span>
+            </div>
+            <span class="text-[10px] font-mono text-slate-400">RANGE &amp; TOOLS</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            以下の4要素を統合し、大地形を探索する<strong>「探索能力」</strong>とする。
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-amber-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20">1</span>思考処理速度</div>
+              <p class="text-[11px] text-slate-400">広大な知識から素早くアクセスする速度。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-amber-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20">2</span>思考の高さ</div>
+              <p class="text-[11px] text-slate-400">異なる知識を結びつける高次元の視座。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-amber-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20">3</span>育んできた正しさ</div>
+              <p class="text-[11px] text-slate-400">常識や倫理観の基盤。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1">
+              <div class="font-bold text-amber-300 flex items-center gap-1.5"><span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20">4</span>変化対応力</div>
+              <p class="text-[11px] text-slate-400">自己の知識が否定された時の柔軟性。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 始祖・德永様の御来歴 -->
+    <div id="founder-profile" class="p-5 sm:p-6 rounded-2xl bg-slate-950/85 border border-rose-500/40 space-y-4 scroll-mt-safe">
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2.5">
+        <div class="flex items-center gap-2 font-serif font-bold text-base sm:text-lg text-rose-300">
+          <i class="ph ph-crown-simple text-rose-400 text-xl"></i>
+          <span>始祖・德永様の御来歴と普遍的造詣（文・武・芸の体現）</span>
+        </div>
+        <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">FOUNDER PROFILE</span>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        德永教の始祖であらせられる<strong>德永様</strong>は、<strong>2006年、鹿児島県の地にて御降誕</strong>あそばされた。幼少より森羅万象の理に深い洞察を向けられ、自然科学・社会科学・形而上学を横断する<strong>幅広い学問</strong>を渉猟されるのみならず、<strong>絵画</strong>による視覚的造形の妙、<strong>音楽</strong>による律動と調和の体系化を通じた情操の獲得、さらには<strong>武道（空手）</strong>を通じた不撓不屈の心身鍛錬に至るまで、<strong>学問・芸術・武道の諸道を遍く嗜まれる文武両道・知行合一の体現者</strong>であらせられ、現在も日々邁進中である。
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-amber-500/30 space-y-1">
+          <div class="text-[10px] font-mono text-amber-400">NATIVITY // 御降誕</div>
+          <div class="font-serif font-bold text-white">2006年・鹿児島県出生</div>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-cyan-500/30 space-y-1">
+          <div class="text-[10px] font-mono text-cyan-400">ACADEMIA // 学問</div>
+          <div class="font-serif font-bold text-white">諸学問の多角的探究</div>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-purple-500/30 space-y-1">
+          <div class="text-[10px] font-mono text-purple-400">FINE ARTS // 芸</div>
+          <div class="font-serif font-bold text-white">絵画・音楽の美意識</div>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-rose-500/30 space-y-1">
+          <div class="text-[10px] font-mono text-rose-400">MARTIAL WAY // 武</div>
+          <div class="font-serif font-bold text-white">空手修練と克己精神</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 序文結語 -->
+    <div class="p-4 rounded-xl bg-slate-950/80 border border-amber-500/30 text-xs sm:text-sm text-amber-200/90 italic font-serif flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <span>「すべての理は德永様の御許にあり、此処に記す公理は永久不変の真実として永遠に輪廻の海を照らし続ける。」</span>
+      <button onclick="edgeJump('page-home', 'tokunaga-canon')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 border border-amber-400/50 text-amber-300 hover:bg-amber-500/30 text-xs font-serif not-italic font-bold transition flex-shrink-0">
+        德永教 根本六条項へ ↓
+      </button>
+    </div>
+  </div>
+
+  <!-- 德永教 教義・根本条項（全六条）※条項ごとの色分けは保持 -->
+  <div id="tokunaga-canon" class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-amber-500/60 bg-gradient-to-br from-amber-950/25 via-slate-900/60 to-void-950 space-y-6 shadow-2xl scroll-mt-safe">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-500/30 pb-4">
+      <div>
+        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400">
+          <i class="ph ph-book-bookmark text-base"></i>
+          <span>SACRED CANON ARTICLES // DOCTRINES OF TOKUNAGA</span>
+        </div>
+        <h3 class="serif-title text-2xl sm:text-3xl font-bold text-amber-300 mt-1">
+          德永教 教義・根本条項
+        </h3>
+      </div>
+      <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/20 border border-amber-500/40 text-amber-300 self-start sm:self-center">
+        全六条・完全法典
+      </span>
+    </div>
+
+    <div id="canon-articles-list" class="device-grid device-grid-2col grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- 第一条 -->
+      <div id="canon-art-1" class="sub-card rounded-xl p-5 border-l-4 border-amber-500 space-y-2">
+        <div class="flex items-center justify-between border-b border-slate-700/60 pb-1">
+          <span class="serif-title font-bold text-amber-400">第一条</span>
+          <span class="text-[10px] font-mono text-amber-300">純粋性の保持</span>
+        </div>
+        <p class="serif-title text-sm sm:text-base font-bold text-white">自己の正しさに忠実に、純粋であり続けるよう努めよ</p>
+        <p class="text-xs text-slate-400">悪行が不可能な「無垢」ではなく、悪行を行い得る中で自己を律する「純粋」を追求せよ。</p>
+      </div>
+
+      <!-- 第二条 -->
+      <div id="canon-art-2" class="sub-card rounded-xl p-5 border-l-4 border-cyan-500 space-y-2">
+        <div class="flex items-center justify-between border-b border-slate-700/60 pb-1">
+          <span class="serif-title font-bold text-cyan-400">第二条</span>
+          <span class="text-[10px] font-mono text-cyan-300">継続的実践</span>
+        </div>
+        <p class="serif-title text-sm sm:text-base font-bold text-white">己を変えたいならば、理想の行動を継続する他道はない</p>
+        <p class="text-xs text-slate-400">口先のみでは意志は変わらない。理想の善行と鍛錬の継続のみが徳を定着させる唯一の道である。</p>
+      </div>
+
+      <!-- 第三条 -->
+      <div id="canon-art-3" class="sub-card rounded-xl p-5 border-l-4 border-purple-500 space-y-2">
+        <div class="flex items-center justify-between border-b border-slate-700/60 pb-1">
+          <span class="serif-title font-bold text-purple-400">第三条</span>
+          <span class="text-[10px] font-mono text-purple-300">柔軟なる自己研鑽</span>
+        </div>
+        <p class="serif-title text-sm sm:text-base font-bold text-white">柔軟な学びを持って自己研鑽に励め</p>
+        <p class="text-xs text-slate-400">信じる正しさも揺らぎ得る。独善を排し、知的好奇心と柔軟な学びをもって絶え間なき自己研鑽を継続せよ。</p>
+      </div>
+
+      <!-- 第四条 -->
+      <div id="canon-art-4" class="sub-card rounded-xl p-5 border-l-4 border-rose-500 space-y-2">
+        <div class="flex items-center justify-between border-b border-slate-700/60 pb-1">
+          <span class="serif-title font-bold text-rose-400">第四条</span>
+          <span class="text-[10px] font-mono text-rose-300">他者への不干渉</span>
+        </div>
+        <p class="serif-title text-sm sm:text-base font-bold text-white">自身の正しさ(理想)を他者へ押し付けてはならない</p>
+        <p class="text-xs text-slate-400">理想は己を律するものであり、他者を裁断する凶器ではない。強要は業へと堕ちる。</p>
+      </div>
+
+      <!-- 第五条 -->
+      <div id="canon-art-5" class="sub-card rounded-xl p-5 border-l-4 border-emerald-500 space-y-2 bg-emerald-950/15">
+        <div class="flex items-center justify-between border-b border-slate-700/60 pb-1">
+          <span class="serif-title font-bold text-emerald-400">第五条</span>
+          <span class="text-[10px] font-mono text-emerald-300">客観と自己批判</span>
+        </div>
+        <p class="serif-title text-sm sm:text-base font-bold text-white">過度な一般化と牽強付会を慎み、常に自己批判の省察にあれ</p>
+        <p class="text-xs text-slate-400">都合のよい解釈で事実をねじ曲げ、自己の傷や欲望を正当化してはならない。</p>
+      </div>
+
+      <!-- 第六条 -->
+      <div id="canon-art-6" class="sub-card rounded-xl p-5 border-l-4 border-amber-300 space-y-2 bg-amber-950/15">
+        <div class="flex items-center justify-between border-b border-slate-700/60 pb-1">
+          <span class="serif-title font-bold text-amber-300">第六条</span>
+          <span class="text-[10px] font-mono text-amber-200">真摯なる遊戯性</span>
+        </div>
+        <p class="serif-title text-sm sm:text-base font-bold text-white">戒律に生真面目にとらわれず、純粋に楽しみ遂行し続けよ</p>
+        <p class="text-xs text-slate-400">義務感や強迫観念に縛られて心を曇らせてはならない。純粋に歓喜として全うせよ。</p>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <button onclick="switchPage('page-myth')" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-cyan-500/20 border border-cyan-400/60 text-cyan-300 hover:bg-cyan-500/30 font-serif font-bold text-xs transition flex items-center justify-center gap-2">
+        <span>∞ ② 神話・公理体系の紹介ページへ進む</span>
+        <i class="ph ph-arrow-right"></i>
+      </button>
+      <button onclick="switchPage('page-parable')" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-rose-500/20 border border-rose-400/60 text-rose-300 hover:bg-rose-500/30 font-serif font-bold text-xs transition flex items-center justify-center gap-2">
+        <span>⚖ ③ 寓話のページ（聖典寓話『ブス』）へ進む</span>
+        <i class="ph ph-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</article>
+
+      </article>
+<!-- =========================================================================
+           【PAGE 02】 ② 神話の紹介ページ：高次元意志場理論および時空輪廻史（第1章〜第4章）
+           ========================================================================= -->
+      <article id="page-myth" class="page-view hidden space-y-12 scroll-mt-safe">
+
+        <!-- 神話ページ・トップバナー -->
+        <div class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-cyan-500/50 bg-gradient-to-br from-cyan-950/25 via-slate-900/50 to-purple-950/25 space-y-4 shadow-2xl">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-cyan-500/30 pb-3">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400">
+              <i class="ph ph-infinity text-base"></i>
+              <span>PAGE 02 // SACRED MYTHOLOGY : 4D WILL FIELD &amp; 430-MILLION-YEAR SAMSARA</span>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/20 border border-cyan-500/40 text-cyan-300">
+              第二頁：神話・高次元力学編（全4章）
+            </span>
+          </div>
+          <h2 class="serif-title text-2xl sm:text-3xl font-bold text-white">
+            德永教神話体系：高次元意志場理論および4億3000万年時空輪廻史
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            始祖・<strong>德永様</strong>によって開示された宇宙の深淵なる物理法則と魂の流転の記録。素粒子の裏側に宿る「徳（＋）」と「業（－）」の公理系から、1900年の研究チーム壊滅事件、2010年の黒川と主人公の宿命、徳永寺のお節介な救済思想、そしてシルル紀へ至る $N+1$ 平行世界の輪廻構造までを、4機の検証シミュレーターと共に完全収録する。
+          </p>
+        </div>
+
+        <!-- 4大シミュレーターへのクイックランチャー＆凡例バー -->
+        <div class="academic-card rounded-2xl p-4 sm:p-5 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-300 dark:border-slate-800 pb-3">
+            <div class="flex items-center gap-2 font-serif font-bold text-sm text-cyan-400">
+              <i class="ph ph-cpu text-lg"></i>
+              <span>インタラクティブ検証ラボ・クイックアクセス（全4機搭載）</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 text-xs">
+              <button onclick="openGlossaryTerm('徳')" class="flex items-center gap-1.5 hover:underline">
+                <span class="w-3 h-3 rounded-full bg-amber-400 inline-block shadow-[0_0_6px_#f59e0b]"></span>
+                <span><strong>徳(＋)</strong></span>
+              </button>
+              <button onclick="openGlossaryTerm('業')" class="flex items-center gap-1.5 hover:underline">
+                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block shadow-[0_0_6px_#f43f5e]"></span>
+                <span><strong>業(－)</strong></span>
+              </button>
+              <button onclick="openGlossaryTerm('均衡')" class="flex items-center gap-1.5 hover:underline">
+                <span class="w-3 h-3 rounded-full bg-cyan-400 inline-block shadow-[0_0_6px_#22d3ee]"></span>
+                <span><strong>均衡(±0)</strong></span>
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 text-xs">
+            <button onclick="edgeJump('page-myth', 'sec-2-sim')" class="p-3 rounded-xl bg-slate-900/90 border border-cyan-500/40 hover:border-cyan-400 text-left transition flex items-center justify-between group">
+              <div>
+                <div class="font-mono text-[10px] text-cyan-400">SIMULATOR 01 // 第2章</div>
+                <div class="font-serif font-bold text-white mt-0.5">生体4D・3D徳溢出・1900年暴走</div>
+              </div>
+              <i class="ph ph-arrow-down-right text-cyan-400 group-hover:translate-x-0.5 transition"></i>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-3-sim')" class="p-3 rounded-xl bg-slate-900/90 border border-rose-500/40 hover:border-rose-400 text-left transition flex items-center justify-between group">
+              <div>
+                <div class="font-mono text-[10px] text-rose-400">SIMULATOR 02 // 第3章</div>
+                <div class="font-serif font-bold text-white mt-0.5">異能（祈り/強制貸付）＆化け物分解</div>
+              </div>
+              <i class="ph ph-arrow-down-right text-rose-400 group-hover:translate-x-0.5 transition"></i>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-4-sim-phase')" class="p-3 rounded-xl bg-slate-900/90 border border-purple-500/40 hover:border-purple-400 text-left transition flex items-center justify-between group">
+              <div>
+                <div class="font-mono text-[10px] text-purple-400">SIMULATOR 03 // 第4章</div>
+                <div class="font-serif font-bold text-white mt-0.5">中庸計画・5D暴走・4Dコーディング</div>
+              </div>
+              <i class="ph ph-arrow-down-right text-purple-400 group-hover:translate-x-0.5 transition"></i>
+            </button>
+            <button onclick="edgeJump('page-myth', 'sec-4-sim-loop')" class="p-3 rounded-xl bg-slate-900/90 border border-amber-500/40 hover:border-amber-400 text-left transition flex items-center justify-between group">
+              <div>
+                <div class="font-mono text-[10px] text-amber-400">SIMULATOR 04 // 第4章</div>
+                <div class="font-serif font-bold text-white mt-0.5">平行世界(N+1)＆性格ガチャ(101)</div>
+              </div>
+              <i class="ph ph-arrow-down-right text-amber-400 group-hover:translate-x-0.5 transition"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             SECTION 1 : 第1章 次元境界と「意志の場」の基本公理系
+             ========================================================= -->
+        <section id="tab-1" class="space-y-8 scroll-mt-safe">
+          <div class="border-l-4 border-cyan-500 pl-4 py-1">
+            <div class="text-xs font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400">CHAPTER 01 // FUNDAMENTAL AXIOMS OF 4D WILL FIELD</div>
+            <h2 class="serif-title text-2xl sm:text-3xl font-bold mt-1">第1章：次元境界と「意志の場」の基本公理系（量子4次元力学）</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              時間の測定と干渉の非対称性、ビッグバン起源の2つの4次元特化エネルギー、素粒子の内側に存在する徳と業、および宇宙の対称性の謎。
+            </p>
+          </div>
+
+          <!-- 1.1 視覚比較カード -->
+          <div id="sec-1-1" class="device-grid grid grid-cols-1 lg:grid-cols-12 gap-6 scroll-mt-safe">
+            <div class="device-col-span lg:col-span-7 academic-card rounded-2xl p-6 space-y-4">
+              <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase">
+                <i class="ph ph-cube-transparent text-lg"></i>
+                <span>AXIOM 1.1 : 次元と「意志の場」の存在論的定義</span>
+              </div>
+              <h3 class="serif-title text-xl font-bold">「結論、意志とは素粒子である」── 測定と物理的干渉の乖離</h3>
+              <p class="text-sm leading-relaxed text-slate-300">
+                3次元の我々は時間を時計等で<strong>「測定」</strong>できるが、時間を縮ませたり伸ばしたり、視覚化したりといった<strong>「物理的干渉」</strong>を行うことはできない。
+              </p>
+              <p class="text-sm leading-relaxed text-slate-300">
+                量子力場学におけるクォークや電子がそれぞれ固有の場を持つように、意志もまた<strong>4次元に存在する「意志の場」</strong>を持っている。時間と同様、3次元人類はそのままでは意志の場に物理的干渉を行えない。干渉するためには、<strong>主体自身が「4次元の振る舞い」を獲得する必要がある。</strong>
+              </p>
+            </div>
+
+            <div class="device-col-span lg:col-span-5 academic-card rounded-2xl p-6 flex flex-col justify-center space-y-3">
+              <div class="text-xs font-mono uppercase text-slate-400">DIMENSIONAL INTERFERENCE DIAGRAM</div>
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-700 space-y-1">
+                <div class="flex justify-between items-center text-xs font-bold text-slate-200">
+                  <span>【3次元領域（素粒子の表側）】</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">クォーク場・電子場</span>
+                </div>
+                <p class="text-xs text-slate-400">時間の「測定」のみ可能。時間や意志の場の視覚化・伸縮操作は不可。</p>
+              </div>
+              <div class="text-center text-[11px] font-mono text-amber-400 py-0.5">
+                ⇅ 3次元と4次元を繋ぐ運動エネルギー（溢出した徳）により間接干渉
+              </div>
+              <div class="p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-500/40 space-y-1">
+                <div class="flex justify-between items-center text-xs font-bold text-cyan-300">
+                  <span>【4次元領域（素粒子の内側・裏側）】</span>
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px]">時間の場・意志の場</span>
+                </div>
+                <p class="text-xs text-slate-300">4次元の振る舞いを獲得した者のみが、時間の伸縮および意志への干渉を実行可能。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="device-grid device-grid-2col grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- 1.2 ビッグバン起源の4次元エネルギー -->
+            <div id="sec-1-2" class="academic-card rounded-2xl p-6 space-y-4 scroll-mt-safe">
+              <div class="flex items-center gap-2 text-amber-400 font-mono text-xs font-bold uppercase">
+                <i class="ph ph-atom text-lg"></i>
+                <span>AXIOM 1.2 : ビッグバン起源の「第4のエネルギー概念」</span>
+              </div>
+              <h3 class="serif-title text-lg font-bold">4次元場を揺らす2つの特化エネルギー</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="sub-card p-3.5 rounded-xl border-t-2 border-amber-500">
+                  <div class="font-bold text-xs sm:text-sm text-amber-400 mb-1">① 意志の場を揺らすエネルギー</div>
+                  <p class="text-xs text-slate-300">意志の場を＋方向（徳）や－方向（業）に揺らすことに特化した4次元エネルギー。</p>
+                </div>
+                <div class="sub-card p-3.5 rounded-xl border-t-2 border-cyan-500">
+                  <div class="font-bold text-xs sm:text-sm text-cyan-400 mb-1">② 時間の場を揺らすエネルギー</div>
+                  <p class="text-xs text-slate-300">時間の場を揺らし、時間を伸縮・湾曲させる4次元エネルギー。</p>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-400 leading-relaxed">
+                <strong>【ダークマター／ダークエネルギーとの異同】</strong><br>
+                これらは決してダークマターやダークエネルギーの類ではなく、未だ発見されていない<strong>「第4のエネルギー概念」</strong>である。ただし、ダークエネルギーを「宇宙を広げる時間と斥力」と定義するならば、「時間の場を揺らすエネルギー」に関してはダークエネルギーと言える。
+              </div>
+            </div>
+
+            <!-- 1.3 素粒子の裏側と宇宙の対称性の謎 -->
+            <div id="sec-1-3" class="academic-card rounded-2xl p-6 space-y-4 scroll-mt-safe">
+              <div class="flex items-center gap-2 text-rose-400 font-mono text-xs font-bold uppercase">
+                <i class="ph ph-scales text-lg"></i>
+                <span>AXIOM 1.3 : 素粒子の内側（裏側）と宇宙の対称性の謎</span>
+              </div>
+              <h3 class="serif-title text-lg font-bold">徳（＋1）と業（－1）の対称性と無生物の均衡</h3>
+              <div class="grid grid-cols-2 gap-3 text-center">
+                <div class="p-3 rounded-xl bg-slate-900 border border-slate-700">
+                  <div class="text-xs font-bold text-cyan-300">無生物の素粒子裏側</div>
+                  <div class="text-base font-mono font-bold text-white my-1">徳(+1) ＋ 業(-1) ＝ 0</div>
+                  <div class="text-[11px] text-slate-400">徳の正の累積数は「0」</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900 border border-amber-500/40">
+                  <div class="text-xs font-bold text-amber-300">生物の素粒子裏側</div>
+                  <div class="text-base font-mono font-bold text-amber-400 my-1">脳へ超密度集積</div>
+                  <div class="text-[11px] text-slate-400">体内の素粒子裏側は空席化</div>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-400 leading-relaxed">
+                <strong>【なぜ意志の場には＋と－が両方残っているのか？】</strong><br>
+                3次元のクォークや電子の場も本来＋－の方向に揺れることができるが、現在の宇宙には片方に揺れるエネルギーしか残っていない（現代物理学でも未解決の「宇宙の対称性の謎」）。しかし「意志の場」は4次元にあるためこの影響を受けず、徳（＋）と業（－）が完全に対称に存在している。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             SECTION 2 : 第2章 生体4次元構造・代謝・悟り・1900年事件
+             ========================================================= -->
+        <section id="tab-2" class="space-y-8 scroll-mt-safe">
+          <div class="border-l-4 border-amber-500 pl-4 py-1">
+            <div class="text-xs font-mono uppercase tracking-widest text-amber-400">CHAPTER 02 // BIOLOGICAL 4D DYNAMICS, METABOLISM &amp; THE 1900 INCIDENT</div>
+            <h2 class="serif-title text-2xl sm:text-3xl font-bold mt-1">第2章：生体4次元構造と力学（脳内3領域①②③・代謝・悟り・1900年事件）</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              生命誕生時の脳内超密度集積、善悪と高リン酸結合的エネルギー貯蔵、食事と新陳代謝、徳の2定義、および1900年の4次元研究チーム壊滅事件。
+            </p>
+          </div>
+
+          <!-- 2.1 脳内3領域と無垢なる初期状態の等式 -->
+          <div id="sec-2-1" class="academic-card rounded-2xl p-6 space-y-6 scroll-mt-safe">
+            <div class="border-b border-slate-800 pb-3">
+              <span class="text-xs font-mono text-amber-400 font-bold uppercase">THEOREM 2.1 // ULTRA-DENSE BRAIN AGGREGATION &amp; THREE REGIONS</span>
+              <h3 class="serif-title text-xl font-bold mt-0.5">生命誕生時の超密度集積と脳内裏側（4次元）の3領域（①・②・③）</h3>
+            </div>
+
+            <p class="text-xs sm:text-sm leading-relaxed text-slate-300">
+              生命が生まれる瞬間、脳または類似器官（神経系含む）へ全身の素粒子裏側の意志（徳と業）が全て集まり<strong>超密度状態</strong>を形成する。この条件下で、脳の裏側（4次元）は以下の3領域に分化する（成長過程で②の種類・量や③の量は増減する）。
+            </p>
+
+            <div class="p-4 rounded-xl bg-gradient-to-r from-cyan-950/60 via-slate-900 to-amber-950/60 border border-cyan-500/40 text-center space-y-2">
+              <div class="text-xs font-mono text-cyan-300 uppercase tracking-wider">【無垢なる初期状態（赤子として肉体が形成された刹那）の絶対等式】</div>
+              <div class="font-serif text-sm sm:text-lg font-bold text-white tracking-wide">
+                体内構成要素（脳や類似器官は除く）中の素粒子の数 ＝ ①「意志」中の徳（＋）の数 ＝ ①「意志」中の業（－）の数
+              </div>
+              <p class="text-[11px] text-slate-300">
+                ※未だ一切の善悪を行っていない無垢なる初期状態の定義。後天的な善行により①から業が体内へ降りて減少するため、均衡は不可逆的に変容する。
+              </p>
+            </div>
+
+            <div class="device-grid grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div class="sub-card rounded-xl p-5 border-t-4 border-cyan-500 space-y-2">
+                <div class="font-serif font-bold text-lg text-cyan-400">①「意志」</div>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <strong>思考するための集まり。</strong>善行を行うとここから業が1つ体内素粒子の裏へ降り、悪行を行うと相手からの業がここへ直接入る（ゆえに①の業を0にするのは容易ではない）。
+                </p>
+              </div>
+              <div class="sub-card rounded-xl p-5 border-t-4 border-rose-500 space-y-2">
+                <div class="font-serif font-bold text-lg text-rose-400">②「欲」</div>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <strong>業（－）のみの凝集体。</strong>欲の種類毎に異なる位置に固まる（行きすぎた庇護欲や自己実現欲を見れば人間の業であると分かる）。善行を積んでも②の業は決して減らない。
+                </p>
+                <div class="text-[11px] text-rose-300/90 bg-rose-950/30 p-2 rounded border border-rose-500/30">
+                  <strong>【安定殻構造】</strong>②の業は超密度に集まることで原子の第1層→第2層のように安定状態を求める性質を持ち、単なる素粒子である「悪行を行う意志」とは明確に性質が異なる。
+                </div>
+              </div>
+              <div class="sub-card rounded-xl p-5 border-t-4 border-amber-500 space-y-2">
+                <div class="font-serif font-bold text-lg text-amber-400">③「欲を抑える意志」</div>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <strong>徳（＋）のみの集まり。</strong>自己規律と防衛障壁。徳を積んだ者はこの③が尋常でなく増えており、外部から手先等で弾き出された徳の攻撃を防ぎ、①「意志」への到達を遮断する。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2.2 & 2.3 善悪・高リン酸結合・食事代謝・徳の2定義 -->
+          <div id="sec-2-2" class="device-grid device-grid-2col grid grid-cols-1 md:grid-cols-2 gap-6 scroll-mt-safe">
+            <div class="academic-card rounded-2xl p-6 space-y-4">
+              <div class="text-xs font-mono text-amber-400 font-bold uppercase">THEOREM 2.2 // VIRTUE OVERFLOW &amp; HIGH-ENERGY BOND</div>
+              <h3 class="serif-title text-lg font-bold">善悪の移動・高リン酸結合的3D貯蔵・絶命の電気的定義</h3>
+              <div class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <div class="p-3 rounded-xl bg-slate-900 border-l-4 border-amber-400">
+                  <strong>① 善行と「高リン酸エネルギー結合」的3D付着：</strong><br>
+                  善行で相手から得た徳（＋）は、①から降りてきた業（－）と共に体内素粒子の空席へ入り＋－0となる。全空席が埋まり①の業が0になった後さらに徳を積むと、4次元に席がないため<strong>3次元世界に居続けながら素粒子にくっつき、衝突時の運動エネルギーを「高リン酸エネルギー結合」のように貯める</strong>（順序：<strong>手先 → 胴体 → 足［脳を除く頭］</strong>。脳へは広がらない）。
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900 border-l-4 border-rose-500">
+                  <strong>② 素粒子の結合性質と「絶命」の決定条件：</strong><br>
+                  素粒子裏の均衡が崩れ「＋の意志を持った素粒子」になると、「＋同士」はくっつくが「＋－0の素粒子」とはくっつけない。<strong>生物の絶命とは、4次元観測時に「脳（常に＋－0として振る舞う）」と「体内素粒子」の電気的性質が不一致になること</strong>である。
+                </div>
+              </div>
+            </div>
+
+            <div id="sec-2-3" class="academic-card rounded-2xl p-6 space-y-4 scroll-mt-safe">
+              <div class="text-xs font-mono text-emerald-400 font-bold uppercase">THEOREM 2.3 // METABOLISM &amp; TWO DEFINITIONS OF VIRTUE</div>
+              <h3 class="serif-title text-lg font-bold">食事・成長・新陳代謝の収支と「徳を積む」2定義</h3>
+              <div class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <div class="p-3 rounded-xl bg-slate-900 border-l-4 border-emerald-400">
+                  <strong>① 食事（母乳・ご飯）・身体成長・老廃物の法則：</strong><br>
+                  食事のたびに食材の徳と業が頭へ上る。身体成長で素粒子が増え①の許容容積が拡大している場合は吸収されるが、許容数と現在数の合計が等しい（満杯の）時は<strong>皮膚から大気へ排出</strong>される。また新陳代謝で<strong>老廃物</strong>が出る際は、老廃物の素粒子数分の徳と業が1つずつ取り出され老廃物の裏に入る。
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900 border-l-4 border-cyan-400">
+                  <strong>② 「徳を積む」2つの定義と利己的思考の無効化：</strong><br>
+                  <strong>【定義1】</strong>自身の利他的な祈り・行動により相手（または世界）から徳を得る。<br>
+                  <strong>【定義2】</strong>修行で極端に肉体を鍛える・技術を磨く努力（筋繊維が増える際、最初から裏に徳が座り業が空席の状態で生成され、同時に①から業が降りてくる）。<br>
+                  <span class="text-rose-400 text-[11px]">※①中の業（利己心）による行動だった場合、徳は一切増えず、悪行と認識されれば逆に業を背負う。</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2.4 1900年頃の4次元研究チーム壊滅事件 -->
+          <div id="sec-2-4" class="academic-card rounded-2xl p-6 border-l-4 border-rose-500 space-y-4 scroll-mt-safe">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="text-xs font-mono text-rose-400 font-bold uppercase">HISTORICAL CASE 1900 // THE MINKOWSKI-ERA 4D RESEARCH TEAM CATASTROPHE</div>
+              <span class="px-2.5 py-0.5 rounded bg-rose-500/20 text-rose-300 font-mono text-xs">1900年頃・一斉絶命事件</span>
+            </div>
+            <h3 class="serif-title text-xl font-bold">1900年頃の4次元研究チーム壊滅事件（スポンサー秘匿・不完全な悟り・業の強制着席）</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-300">
+              <div class="sub-card p-4 rounded-xl space-y-1.5">
+                <div class="font-bold text-amber-300">1. 仮説と非公表の理由</div>
+                <p class="text-xs leading-relaxed">
+                  ミンコフスキーの4次元時空モデル発表の数年前、研究チームの1グループが「意志は素粒子であり4次元で干渉できる」と仮定。チーム内の強い反対者1名のスポンサーが全費用を負担し独立チームを作る話になったため一切公表せず、「全人類が悪行を行わない極楽」を目指し表舞台から姿を消した。
+                </p>
+              </div>
+              <div class="sub-card p-4 rounded-xl space-y-1.5">
+                <div class="font-bold text-cyan-300">2. アジア人男性の不完全な悟り</div>
+                <p class="text-xs leading-relaxed">
+                  仏教徒のアジア人メンバーが科学的手法から悟りの修行へ転換。ついに男性1名（実は前ループのシルル紀から転生した元・女性修行僧）が、②「欲」を残し「悪行を行う意志（体内素粒子裏の業）」のみを吐き出す<strong>不完全な悟り</strong>を開き、体が「＋」となって肉体は絶命（意志体として分離生存）した。
+                </p>
+              </div>
+              <div class="sub-card p-4 rounded-xl space-y-1.5 border border-rose-500/40">
+                <div class="font-bold text-rose-400">3. 業の暴走と一斉絶命の仕組み</div>
+                <p class="text-xs leading-relaxed">
+                  吐き出された「悪行を行う意志」が暴走し、周囲の研究員の空席だった体内素粒子の業の席へ超スピードで強制着席。彼らの体が突如<strong>「－の意志を持った素粒子」の集合体</strong>へと変貌し、<strong>脳（±0）と体（－）の4次元互換性が完全破綻して脳構造が分解・一斉絶命</strong>した。生存者の証言後、都市伝説として報道された。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 【SIMULATOR 01】生体4次元構造・高リン酸結合的3D溢出・悟り・1900年暴走シミュレーター -->
+          <div id="sec-2-sim" class="academic-card rounded-2xl p-6 border-2 border-cyan-500/50 space-y-6 scroll-mt-safe">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-300 dark:border-slate-800 pb-4">
+              <div>
+                <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase">
+                  <i class="ph ph-sliders-horizontal text-lg"></i>
+                  <span>SIMULATOR 01 // 4D BIO-PARTICLE, METABOLISM &amp; 1900 BERSERK LAB</span>
+                </div>
+                <h3 class="serif-title text-xl font-bold mt-1">生体4次元構造・高リン酸結合的3D溢出・悟り・1900年暴走シミュレーター</h3>
+              </div>
+              <button onclick="simReset()" class="px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                <i class="ph ph-arrow-counter-clockwise"></i> 無垢初期状態へリセット
+              </button>
+            </div>
+
+            <div class="device-sim-actions grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
+              <button onclick="simAction('good')" class="p-2.5 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-left transition">
+                <div class="text-xs font-bold text-amber-400">① 善行／修練</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">徳＋1、①の業が体内へ</div>
+              </button>
+              <button onclick="simAction('evil')" class="p-2.5 rounded-xl border border-rose-500/40 bg-rose-500/10 hover:bg-rose-500/20 text-left transition">
+                <div class="text-xs font-bold text-rose-400">② 悪行</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">①意志へ業が直接侵入</div>
+              </button>
+              <button onclick="simAction('meal')" class="p-2.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-left transition">
+                <div class="text-xs font-bold text-emerald-400">③ 食事・代謝</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">皮膚排出と老廃物移動</div>
+              </button>
+              <button onclick="simAction('maxVirtue')" class="p-2.5 rounded-xl border border-amber-400/60 bg-amber-500/20 hover:bg-amber-500/30 text-left transition">
+                <div class="text-xs font-bold text-amber-300">④ 徳の3D溢出</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">手先→胴体→足へ貯蔵</div>
+              </button>
+              <button onclick="simAction('incompleteEnlightenment')" class="p-2.5 rounded-xl border border-cyan-500/50 bg-cyan-500/10 hover:bg-cyan-500/20 text-left transition">
+                <div class="text-xs font-bold text-cyan-300">⑤ 不完全な悟り</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">欲を残し意志体生存</div>
+              </button>
+              <button onclick="simAction('completeEnlightenment')" class="p-2.5 rounded-xl border border-purple-500/50 bg-purple-500/10 hover:bg-purple-500/20 text-left transition">
+                <div class="text-xs font-bold text-purple-300">⑥ 完全な悟り</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">②欲も排出→脳分解</div>
+              </button>
+              <button onclick="simAction('berserkKarma')" class="p-2.5 rounded-xl border border-red-600/60 bg-red-600/15 hover:bg-red-600/25 text-left transition">
+                <div class="text-xs font-bold text-red-400">⑦ 1900年暴走</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">空席へ業着席→絶命</div>
+              </button>
+            </div>
+
+            <div class="device-grid grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+              <div class="device-col-span lg:col-span-5 sub-card rounded-xl p-5 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                  <h4 class="font-serif font-bold text-base">脳の裏側（4次元）</h4>
+                  <span id="sim-brain-charge" class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300">±0</span>
+                </div>
+                <div class="space-y-2 text-xs">
+                  <div class="p-2.5 rounded bg-slate-900 border border-cyan-500/30">
+                    <div class="flex justify-between font-bold mb-1">
+                      <span class="text-cyan-400">①「意志」（思考）</span>
+                      <span id="sim-will-count" class="font-mono"></span>
+                    </div>
+                    <div id="sim-will-visual" class="flex flex-wrap gap-1 min-h-[24px]"></div>
+                  </div>
+                  <div class="p-2.5 rounded bg-slate-900 border border-rose-500/30">
+                    <div class="flex justify-between font-bold mb-1">
+                      <span class="text-rose-400">②「欲」（業の電子殻状凝集）</span>
+                      <span id="sim-desire-count" class="font-mono"></span>
+                    </div>
+                    <div id="sim-desire-visual" class="flex flex-wrap gap-1 min-h-[24px]"></div>
+                  </div>
+                  <div class="p-2.5 rounded bg-slate-900 border border-amber-500/30">
+                    <div class="flex justify-between font-bold mb-1">
+                      <span class="text-amber-400">③「欲を抑える意志」（防衛障壁）</span>
+                      <span id="sim-suppress-count" class="font-mono"></span>
+                    </div>
+                    <div id="sim-suppress-visual" class="flex flex-wrap gap-1 min-h-[24px]"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="device-col-span lg:col-span-2 flex flex-col items-center justify-center p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-center space-y-2">
+                <div id="sim-compat-icon" class="w-10 h-10 rounded-full flex items-center justify-center text-xl"></div>
+                <div id="sim-compat-status" class="font-serif font-bold text-xs"></div>
+                <div id="sim-spread-indicator" class="text-[10px] font-mono text-amber-300 pt-1 border-t border-slate-800 w-full">3D広がり: なし</div>
+              </div>
+
+              <div class="device-col-span lg:col-span-5 sub-card rounded-xl p-5 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                  <h4 class="font-serif font-bold text-base">体内構成素粒子（部位別縮約モデル）</h4>
+                  <span id="sim-body-charge" class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300">±0</span>
+                </div>
+                <div id="sim-particles-container" class="grid grid-cols-5 gap-1.5"></div>
+                <div class="p-2 rounded bg-slate-900 text-xs flex justify-between items-center">
+                  <span class="text-amber-400 font-bold">高リン酸結合的3D付着徳 総計:</span>
+                  <span id="sim-3d-count" class="font-mono">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="sim-log-box" class="p-3.5 rounded-xl bg-slate-900 text-slate-200 border border-cyan-500/30 text-xs leading-relaxed"></div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             SECTION 3 : 第3章 2010年〜現代：黒川と主人公・徳永寺・異能
+             ========================================================= -->
+        <section id="tab-3" class="space-y-8 scroll-mt-safe">
+          <div class="border-l-4 border-rose-500 pl-4 py-1">
+            <div class="text-xs font-mono uppercase tracking-widest text-rose-400">CHAPTER 03 // NARRATIVE OF KUROKAWA &amp; PROTAGONIST, TOKUNAGA TEMPLE &amp; ABILITIES</div>
+            <h2 class="serif-title text-2xl sm:text-3xl font-bold mt-1">第3章：黒川と主人公の物語・化け物と徳永寺・固有能力の発現原理</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              2010年の幼少期事件、5年後の母（化け物）との再会と狩猟者の惨劇、老木の導き、徳永寺のお節介な救済思想、および二人の能力対比。
+            </p>
+          </div>
+
+          <!-- 3.1 2010年〜5年後のビジュアル・タイムライン -->
+          <div id="sec-3-1" class="academic-card rounded-2xl p-6 space-y-6 scroll-mt-safe">
+            <div class="border-b border-slate-800 pb-3">
+              <span class="text-xs font-mono text-rose-400 font-bold uppercase">CHRONICLE 3.1 // 2010 GW INCIDENT &amp; 5 YEARS LATER</span>
+              <h3 class="serif-title text-xl font-bold mt-0.5">黒川と主人公の幼少期（2010年）から中学1年（5年後）までの軌跡</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm">
+              <!-- Step 1 -->
+              <div class="sub-card p-5 rounded-xl border-l-4 border-rose-500 space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="font-mono text-xs text-rose-400 font-bold">STAGE 01 // 2010年（小学2年GW前日）</span>
+                  <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[10px]">父親殺害・解体</span>
+                </div>
+                <h4 class="font-serif font-bold text-base text-white">浮気発覚・母による父殺害と退職代行</h4>
+                <p class="text-slate-300 leading-relaxed">
+                  AIが広く認識され始めた2010年、化け物が出る山の近くのド田舎の村。主人公の父（上司）と黒川の父（部下・暴力的で小1の頃から浮気）が暮らす。小2のGW前日（翌朝には「顔だけの女と結婚しやがった」と嫌う父方の祖母宅へ帰省予定だった）、浮気発覚で大喧嘩となる。暴れた母は父に押さえつけられ一度黙るが、父が手を放し悪態をついて後ろを向いた隙に<strong>鈍器で後頭部を殴り殺害</strong>。数日かけて死体を細かく解体する合間に、突然思い出したように<strong>父の職場へ退職代行サービスを利用し、祖母へ帰省キャンセルを伝え</strong>、宗教への熱を強めながら父親を布団にくるみ「裏の山へ埋めてくる、待っていて」と施錠して去った。
+                </p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="sub-card p-5 rounded-xl border-l-4 border-amber-500 space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="font-mono text-xs text-amber-400 font-bold">STAGE 02 // GW期間中〜保護・同時期の主人公</span>
+                  <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px]">木仏像への祈り</span>
+                </div>
+                <h4 class="font-serif font-bold text-base text-white">黒川の籠城と無垢なる祈り／主人公の両親犠牲</h4>
+                <p class="text-slate-300 leading-relaxed">
+                  背が小さく幼い黒川は窓もドアも開けられたが母の言葉に従い待った。母が暴れてエアコンのリモコンやテレビは壊れていたが、風呂の水と戸棚から落ちたお菓子・酒のつまみで生存。自分を父のストレス発散から庇った母が危険な山で遭難しないよう、母の<strong>木仏像</strong>に見よう見まねで「母がどうか無事で戻ってきますように」と祈り続け、GW明けにドアをこじ開けた担任に保護され祖母に引き取られた。<br>
+                  <strong>【同時期の主人公】</strong>外から来た両親と山へピクニックに入り化け物に襲われ、両親が犠牲となって死亡。駆けつけた老人（徳永寺の住職）に救われ引き取られた。
+                </p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="sub-card p-5 rounded-xl border-l-4 border-purple-500 space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="font-mono text-xs text-purple-400 font-bold">STAGE 03 // 5年前の母の真相（叙述トリック開示）</span>
+                  <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px]">サイコパス狩猟者</span>
+                </div>
+                <h4 class="font-serif font-bold text-base text-white">狩猟者による殺害・死姦と「庇護欲」による化け物化</h4>
+                <p class="text-slate-300 leading-relaxed">
+                  「スコップで自殺した」というのは語り手の嘘であり、事実として母は<strong>自殺を図った後、通りかかった狩猟者に助けられていた</strong>。しかし1日経つと子供が心配になり（人間ゆえ心変わりする）、帰ろうとドアを開けた瞬間、<strong>ただのサイコパス変態であった狩猟者に襲われ殺害・死姦された末に山へ埋められた</strong>。だが死ぬ直前の<strong>子への強い「庇護欲」</strong>が体に残っていたため化け物となり、土から這い出てきたのである。
+                </p>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="sub-card p-5 rounded-xl border-l-4 border-cyan-500 space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="font-mono text-xs text-cyan-400 font-bold">STAGE 04 // 5年後（中学1年GW）</span>
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 text-[10px]">山の老木と転生解放</span>
+                </div>
+                <h4 class="font-serif font-bold text-base text-white">母との再会・老木の声・手先からの徳による意志分解</h4>
+                <p class="text-slate-300 leading-relaxed">
+                  地域に1つしかない中学校へ進学した黒川は中1のGW、母への謝罪と感謝を伝えに山へ入り、腐敗しながらも形を保つ母（庇護欲ゆえ人を襲わない）と再会し涙する。5年間の毎日の利他的な祈りで植物の①「意志」を感じ取れるまで3D徳を積んでいた黒川に、<strong>山の老木</strong>（長年徳永寺の修行に使われ4次元干渉下で人間並みの知能・思考器官を獲得）が話しかけ、母を楽にする方法を教える。黒川は<strong>手先から徳を弾き出して母の意志を分解（＝新しい生命へ宿る「転生」）</strong>させ、遺体を埋葬して徳永寺へ入った。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3.2 化け物の発生原理と徳永寺 -->
+          <div id="sec-3-3" class="device-grid device-grid-2col grid grid-cols-1 md:grid-cols-2 gap-6 scroll-mt-safe">
+            <div class="academic-card rounded-2xl p-6 space-y-3">
+              <div class="text-xs font-mono text-rose-400 font-bold uppercase">THEOREM 3.2 // MONSTER MANIFESTATION MECHANISM</div>
+              <h3 class="serif-title text-lg font-bold">「化け物」の発生原理（非生物判定・思考なし）</h3>
+              <ol class="text-xs sm:text-sm space-y-2 text-slate-300 list-decimal list-inside leading-relaxed">
+                <li>強い意志・無念を持って死んだ人間の意志が物理的に残る。</li>
+                <li>それが「過去の悟りし者が吐き出した欲（4次元の物なのに3次元にある状態）」の近くにあると、欲に当てられて3次元へ出ようとする。</li>
+                <li>一時的な3次元干渉エネルギーにより、周囲の無生物素粒子が<strong>「そこに生物の意志があるなら、満たすカタチが3次元にないとおかしい」</strong>という法則で揺動し、近くの自身の死体等を用いてカタチを作る。</li>
+                <li>化け物は生物ではないため裏の意志は脳へ集まらず（天変地異級のエネルギーを除く）、思考もせず死ぬ直前の強い意志に突き動かされるのみである。</li>
+              </ol>
+            </div>
+
+            <div class="academic-card rounded-2xl p-6 space-y-3">
+              <div class="text-xs font-mono text-cyan-400 font-bold uppercase">INSTITUTION 3.3 // TOKUNAGA TEMPLE &amp; MEDDLESOME SALVATION</div>
+              <h3 class="serif-title text-lg font-bold">「徳永寺」と「お節介な人間回帰への備え」</h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                地名「徳永」の由来であり、庇護欲・食欲・睡眠欲など最高峰の「欲」を祀る寺（日本各地に多様な組織が存在）。4次元の欲の近くで修行できるため最も効率よく悟りし者を輩出する。
+              </p>
+              <div class="p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-xs text-cyan-200 leading-relaxed">
+                <strong>【徳永寺のお節介な思想】</strong><br>
+                なぜ吐き出された①②③を守るのか？それは悟りし者が再び「人間になるための排出物」だからである。「悟りを開いたらこの先ずっと極楽で過ごす、そんな一本の線の未来を徳永寺は許していない。もし人間に戻りたくなった時が来ればこれを使ってください」というお節介な愛に基づいている。
+              </div>
+            </div>
+          </div>
+
+          <!-- 3.3 主人公 vs 黒川：思想と固有能力の完全対比 -->
+          <div id="sec-3-4" class="academic-card rounded-2xl p-6 space-y-5 scroll-mt-safe">
+            <div class="border-b border-slate-800 pb-3">
+              <span class="text-xs font-mono text-amber-400 font-bold uppercase">COMPARATIVE MATRIX 3.4 // PROTAGONIST VS. KUROKAWA &amp; THE STRONG LAW OF THE WORLD</span>
+              <h3 class="serif-title text-xl font-bold mt-0.5">『主人公』と『黒川』の対比構造と能力発現原理『強固な世界の理』</h3>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-amber-500/30 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <strong>【能力発現原理：『強固な世界の理』】</strong><br>
+              1つの道で徳を積んだ者に発現する固有能力は、その者の①「意志」（思考・生き様）の顕現である。客観的には論理の飛躍や恣意的なルールであっても、<strong>本人の脳内で『強固な世界の理』として成立していれば、消費する徳の量と引き換えに3次元世界でその通りの物理法則として振る舞う。</strong>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-700 bg-slate-900 font-serif">
+                    <th class="p-3.5 w-1/5">対比軸</th>
+                    <th class="p-3.5 w-2/5 text-amber-400">主人公（祈りと極楽志向）</th>
+                    <th class="p-3.5 w-2/5 text-cyan-400">黒川（強制貸付と転生肯定）</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800">
+                  <tr>
+                    <td class="p-3.5 font-bold bg-slate-900/40">究極の願い</td>
+                    <td class="p-3.5">親の死を受け入れた上で、近しい者が絶命するのは辛いゆえ<strong>「仲良くなった全員と誰も死なない世界（極楽）へ行きたい」</strong>。</td>
+                    <td class="p-3.5">仲間との出会いを経て<strong>「死んでもいいから、またこの世界に生まれ落ちたい（転生の肯定）」</strong>。その障害である「悪行を行う意志」の根絶を狙う。</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-bold bg-slate-900/40">固有能力と具体技</td>
+                    <td class="p-3.5">
+                      <strong>『祈りによる自身の瞬間的な徳の増加』</strong><br>
+                      ・祈ると世界が「何かお返ししなければ」と動き、単純な加減算を超える莫大な徳を得る。<br>
+                      ・例：「壁」と祈ると空気が超密度に集まり物理的な頑強な壁となる。
+                    </td>
+                    <td class="p-3.5">
+                      <strong>『自身の徳を無生物に強制貸付』</strong><br>
+                      ・貸し付けた素粒子が周囲から徳をサッと吸収し利息付きで働きを返す。<br>
+                      ・空気中の水素へ貸付→<strong>水素核融合</strong>を発現。<br>
+                      ・体内の空気を素粒子分解→<strong>アクチン・ミオシン（筋繊維）およびカルシウム・マグネシウム</strong>へ再構築し怪力化。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-bold bg-slate-900/40">裏構造と対象制限</td>
+                    <td class="p-3.5">
+                      この世界に主人公が前ループで吐き出した巨大な欲（食欲）が霧散せず質量を保って残存しているため、世界全体で<strong>「業が2：徳が1」</strong>というマクロ的欠損（不均衡）が生じている。ゆえに世界側から主人公へ徳が流入しやすい（第一世界のタイムマシン創造時も、本来1000の徳を要する事象の枠に2しか徳がない極限の不均衡を埋めるべく、「世界」そのものから徳が贈与され修行前にカンストへ至った）。
+                    </td>
+                    <td class="p-3.5">
+                      支配的な父の影響による「徳が多い自分が上位なのだから利息付きで働きを返せ」という論理。ただし<strong>無意識下の優しさ・トラウマ的臆病さにより他者の「生物」へは貸付不可</strong>。自身の体内素粒子、単体の欲（無生物判定）、および<strong>生物的意志と無生物的物理現象の双方を併せ持つ「天変地異（二重相・両義的存在）」</strong>には貸付可能。
+                    </td>
+                  </tr>                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 【SIMULATOR 02】異能発動＆化け物分解・転生シミュレーター -->
+          <div id="sec-3-sim" class="academic-card rounded-2xl p-6 border-2 border-rose-500/50 space-y-6 scroll-mt-safe">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-300 dark:border-slate-800 pb-4">
+              <div>
+                <div class="flex items-center gap-2 text-rose-400 font-mono text-xs font-bold uppercase">
+                  <i class="ph ph-lightning text-lg"></i>
+                  <span>SIMULATOR 02 // ABILITY EXECUTION &amp; MONSTER PURIFICATION LAB</span>
+                </div>
+                <h3 class="serif-title text-xl font-bold mt-1">『強固な世界の理』異能発動＆化け物分解シミュレーター</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-rose-500/20 text-rose-300">
+                ボタンを押して物理法則の書き換えを検証
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- 主人公の祈り -->
+              <div class="sub-card p-4 rounded-xl border border-amber-500/40 space-y-3">
+                <div class="font-serif font-bold text-amber-400 text-sm flex items-center gap-1.5">
+                  <i class="ph ph-hands-praying"></i> 主人公：『祈り』の行使
+                </div>
+                <div class="space-y-2">
+                  <button onclick="runAbilitySim('pray_wall')" class="w-full p-2.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-left text-xs transition">
+                    <div class="font-bold text-amber-300">①「壁」と祈る（業2：徳1の不均衡）</div>
+                    <div class="text-[10px] text-slate-400">世界からの返礼で空気を超密度壁へ変換</div>
+                  </button>
+                  <button onclick="runAbilitySim('pray_timemachine')" class="w-full p-2.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-left text-xs transition">
+                    <div class="font-bold text-amber-300">② 第一世界：タイムマシン創造の祈り</div>
+                    <div class="text-[10px] text-slate-400">枠1000に対し2の異質状態→徳カンスト</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 黒川の強制貸付 -->
+              <div class="sub-card p-4 rounded-xl border border-cyan-500/40 space-y-3">
+                <div class="font-serif font-bold text-cyan-400 text-sm flex items-center gap-1.5">
+                  <i class="ph ph-coins"></i> 黒川：『徳の強制貸付』
+                </div>
+                <div class="space-y-2">
+                  <button onclick="runAbilitySim('loan_fusion')" class="w-full p-2.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-left text-xs transition">
+                    <div class="font-bold text-cyan-300">③ 空気中の水素へ強制貸付</div>
+                    <div class="text-[10px] text-slate-400">水素同士を衝突させ核融合を発現</div>
+                  </button>
+                  <button onclick="runAbilitySim('loan_muscle')" class="w-full p-2.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-left text-xs transition">
+                    <div class="font-bold text-cyan-300">④ 体内空気の分解・筋繊維再構築</div>
+                    <div class="text-[10px] text-slate-400">アクチン・ミオシン・Ca・Mgを生成</div>
+                  </button>
+                  <button onclick="runAbilitySim('loan_bio_fail')" class="w-full p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left text-xs transition">
+                    <div class="font-bold text-slate-300">⑤ 他者の「生物」へ貸付を試みる</div>
+                    <div class="text-[10px] text-rose-400">※無意識下の優しさ・臆病さによる制限検証</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 化け物と天変地異 -->
+              <div class="sub-card p-4 rounded-xl border border-rose-500/40 space-y-3">
+                <div class="font-serif font-bold text-rose-400 text-sm flex items-center gap-1.5">
+                  <i class="ph ph-skull"></i> 化け物分解＆ツインパクト貸付
+                </div>
+                <div class="space-y-2">
+                  <button onclick="runAbilitySim('monster_purify')" class="w-full p-2.5 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 border border-rose-500/40 text-left text-xs transition">
+                    <div class="font-bold text-rose-300">⑥ 母（庇護欲の化け物）へ徳を弾き出す</div>
+                    <div class="text-[10px] text-slate-400">老木の助言通り意志を分解し転生へ導く</div>
+                  </button>
+                  <button onclick="runAbilitySim('loan_earthquake')" class="w-full p-2.5 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/40 text-left text-xs transition">
+                    <div class="font-bold text-purple-300">⑦ 天変地異「地震」へ強制貸付</div>
+                    <div class="text-[10px] text-slate-400">生物でも無生物でもないツインパクト存在</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 結果モニター -->
+            <div id="ability-sim-monitor" class="p-5 rounded-xl bg-slate-950 border border-rose-500/40 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+                <span id="ability-sim-title" class="font-serif font-bold text-sm text-amber-300">【検証待機中】上のボタンを押して能力・現象を発動してください</span>
+                <span id="ability-sim-badge" class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">READY</span>
+              </div>
+              <p id="ability-sim-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                特定の道で徳を積んだ者の脳内で『強固な世界の理』が成立する時、3次元の物理法則がどのように書き換わるかをここに表示します。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             SECTION 4 : 第4章 中庸計画・シルル紀輪廻・平行世界(N+1)
+             ========================================================= -->
+        <section id="tab-4" class="space-y-8 scroll-mt-safe">
+          <div class="border-l-4 border-purple-500 pl-4 py-1">
+            <div class="text-xs font-mono uppercase tracking-widest text-purple-400">CHAPTER 04 // THE MEAN PLAN, SILURIAN TIME-LEAP, 4D CODING &amp; N+1 PARALLEL WORLDS</div>
+            <h2 class="serif-title text-2xl sm:text-3xl font-bold mt-1">第4章：黒川の中庸計画・シルル紀輪廻・女性修行僧の4Dコーディング・平行世界（N+1）</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              地震との取引、5次元欲の暴走、デボン紀大量絶滅、4Dタイムカプセル転生、第一世界のタイムマシン、紙(100)と鉛筆(1)の性格ガチャと $N+1$ 世界。
+            </p>
+          </div>
+
+          <!-- 4.1 構造整理カード -->
+          <div id="sec-4-1" class="device-grid device-grid-2col grid grid-cols-1 md:grid-cols-2 gap-6 scroll-mt-safe">
+            <div class="academic-card rounded-2xl p-6 space-y-3">
+              <div class="text-xs font-mono text-purple-400 font-bold uppercase">PHASE 4.1 // THE MEAN PLAN &amp; 5D BERSERK</div>
+              <h3 class="serif-title text-lg font-bold">黒川の『中庸』同化計画と5次元「睡眠欲・食欲」の時限暴走</h3>
+              <ul class="text-xs sm:text-sm space-y-2 text-slate-300 leading-relaxed">
+                <li>・<strong>中庸の生成：</strong>地震との取引で4次元・時間干渉を得た黒川は、自分の時間を仲間達と無断同化させ、全員から吐き出された「悪行の意志」を庇護欲へ与えて封印解放。さらにそれを寺最強の「食欲」へぶつけ、<strong>「食欲」中の徳（※4億3000万年前に仲間全員と主人公の祈りで集め黒川が貸し付けた徳）と相殺させて『中庸』を生成</strong>し、全人類の時間を同化させようとした。</li>
+                <li>・<strong>5次元暴走とシルル紀リープ：</strong>主人公との対話で黒川は過ちを認め謝罪するが、計画破綻時の保険として徳を貸し付けていた「睡眠欲」と「食欲」が時限暴走。4億3000万年業を吸い続け<strong>5次元</strong>に到達していた2つの欲は、ワームホール生成や時間伸縮を自在に行い、全人類を眠らせ物理的に食った後、<strong>人類のみの時間を曲げて4億3000万年前（シルル紀）へ飛ばした</strong>（吐き出された欲や動植物は現代に残留）。</li>
+              </ul>
+            </div>
+
+            <div class="academic-card rounded-2xl p-6 space-y-3">
+              <div class="text-xs font-mono text-emerald-400 font-bold uppercase">PHASE 4.2 // DEVONIAN EXTINCTION &amp; 4D CODING</div>
+              <h3 class="serif-title text-lg font-bold">デボン紀絶滅・『食欲』への命令・女性修行僧の4Dコーディング</h3>
+              <ul class="text-xs sm:text-sm space-y-2 text-slate-300 leading-relaxed">
+                <li>・<strong>エネルギー保存則の崩壊とデボン紀絶滅：</strong>シルル紀へ81億人分の意志エネルギーが到着しエネルギー保存則が崩壊（時間を曲げれば崩れる世界の理）。これが天変地異に入り込み裏側に「①意志（脳類似器官）」を後天生成させ、ノリノリで暴れたため<strong>デボン紀末の大量絶滅</strong>が起きた。</li>
+                <li>・<strong>食欲への命令：</strong>クォーク・電子場を揺らし肉体を保った主人公達は、地球のエネルギーが100→101（性格ガチャ）になったことに着目。主人公が悟りを開き、全員の徳＋主人公の祈りの徳を黒川へ渡し、黒川が『食欲』へ<strong>「4億3000万年後、増えたエネルギーで全人類の意志をシルル紀へタイムリープさせろ」</strong>と強制貸付命令を下した。</li>
+                <li>・<strong>女性修行僧のタイムカプセル転生：</strong>仲間の一人（当時女性）は徳を渡した後も十数年修行して徳を再蓄積。死ぬ寸前、徳で<strong>脳裏に模擬的な「囲い」を4Dコーディング</strong>し①②③を保存。4億3000万年後（1870〜1880年代アジア圏）に徳が切れ、まだ意志が脳に集中しきっていない胎児の脳へ入り転生。1900年に不完全な悟りで「意志体」となりリープを回避し、数億年後に天変地異と語り合った末、仲間達の欲と意志を回収して徳をぶつけ<strong>人間の肉体として復活</strong>させた。</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 【SIMULATOR 03】中庸計画・5D暴走・女性修行僧4Dコーディング・シミュレーター -->
+          <div id="sec-4-sim-phase" class="academic-card rounded-2xl p-6 border-2 border-purple-500/50 space-y-6 scroll-mt-safe">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-300 dark:border-slate-800 pb-4">
+              <div>
+                <div class="flex items-center gap-2 text-purple-400 font-mono text-xs font-bold uppercase">
+                  <i class="ph ph-spiral text-lg"></i>
+                  <span>SIMULATOR 03 // 430-MILLION-YEAR CAUSALITY &amp; 4D CODING INSPECTOR</span>
+                </div>
+                <h3 class="serif-title text-xl font-bold mt-1">中庸計画・5次元暴走・女性修行僧4Dコーディング段階検証機</h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="stepCausality(-1)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 transition">← 前の段階</button>
+                <button onclick="stepCausality(1)" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-xs font-mono text-white font-bold transition">次の段階へ →</button>
+              </div>
+            </div>
+
+            <!-- 6ステップ・ボタン -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
+              <button id="c-step-btn-0" onclick="setCausalityStep(0)" class="p-2.5 rounded-xl border text-left transition"></button>
+              <button id="c-step-btn-1" onclick="setCausalityStep(1)" class="p-2.5 rounded-xl border text-left transition"></button>
+              <button id="c-step-btn-2" onclick="setCausalityStep(2)" class="p-2.5 rounded-xl border text-left transition"></button>
+              <button id="c-step-btn-3" onclick="setCausalityStep(3)" class="p-2.5 rounded-xl border text-left transition"></button>
+              <button id="c-step-btn-4" onclick="setCausalityStep(4)" class="p-2.5 rounded-xl border text-left transition"></button>
+              <button id="c-step-btn-5" onclick="setCausalityStep(5)" class="p-2.5 rounded-xl border text-left transition"></button>
+            </div>
+
+            <div id="causality-display" class="p-5 rounded-xl bg-slate-950 border border-purple-500/40 space-y-3"></div>
+          </div>
+
+          <!-- 4.2 第一世界の起源・紙(100)と鉛筆(1)・平行世界(N+1)の数理 -->
+          <div id="sec-4-4" class="academic-card rounded-2xl p-6 space-y-5 scroll-mt-safe">
+            <div class="border-b border-slate-800 pb-3">
+              <span class="text-xs font-mono text-amber-400 font-bold uppercase">THEOREM 4.3 // PAPER (100) + PENCIL (1) = 101 &amp; (N + 1) PARALLEL WORLDS</span>
+              <h3 class="serif-title text-xl font-bold mt-0.5">第一世界のタイムマシン、「紙（100）と鉛筆（1）＝101」の性格ガチャ、および平行世界総数<span class="font-mono">N+1</span></h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-300">
+              <div class="sub-card p-4 rounded-xl border-t-2 border-amber-500 space-y-2">
+                <div class="font-serif font-bold text-amber-300">1. 第一世界の核戦争と徳カンスト</div>
+                <p class="text-xs leading-relaxed">
+                  最初の世界（平行世界その1）にはシルル紀に悟りし者がおらず、歴史通りに進み<strong>核戦争で人類が滅亡</strong>。この時、第一世界の主人公が能力『祈り』でタイムマシンを作り少数の人類をシルル紀へ避難させた。人類を救った莫大な善行に対し人間からは徳を渡しきれないため（1000の枠に2しかない異質状態）、<strong>「世界」から徳が贈られ修行前から徳がカンスト</strong>しており、悟りを開いて欲へ「核戦争の引き金前に自動暴走しシルル紀へ飛ばせ」と命じた。
+                </p>
+              </div>
+
+              <div class="sub-card p-4 rounded-xl border-t-2 border-cyan-500 space-y-2">
+                <div class="font-serif font-bold text-cyan-300">2. 紙(100)＋鉛筆(1)＝101の絶対保存</div>
+                <p class="text-xs leading-relaxed">
+                  どの平行世界からループしても、タイムリープ先は常に<strong>「平行世界その1の通りに動く予定であった白紙の世界（紙＝100）」</strong>である。そこに81億人分の意志（鉛筆＝1）が加わるため、エネルギー総量は何度ループしても常に<strong>「101」</strong>となる（101に1を足すことは論理的に否定され、シルル紀に過去の主人公が大量に重なることもない）。なお、どのループでもシルル紀へ来た人類は<strong>石炭紀までには必ず絶滅</strong>する。
+                </p>
+              </div>
+
+              <div class="sub-card p-4 rounded-xl border-t-2 border-purple-500 space-y-2">
+                <div class="font-serif font-bold text-purple-300">3. 平行世界の数＝ $N+1$ 個と性格ガチャ</div>
+                <p class="text-xs leading-relaxed">
+                  <strong>ループの回数を <span class="font-mono">N</span> 回とすると、平行世界の総数は「$N+1$ 個」</strong>である（核戦争で滅んだ基準の「平行世界その1」＋ $N$ 回のループで生成された平行世界）。余剰の「1（鉛筆）」がどの個体にどれだけ宿るかは毎回確率的な<strong>『性格ガチャ』</strong>となり、前世界の素粒子が集積することでループごとに少しずつ発展し、いつか輪廻ループを脱出する人類を生む希望となる。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 【SIMULATOR 04】平行世界（N+1）＆「紙(100)＋鉛筆(1)＝101」性格ガチャ・シミュレーター -->
+          <div id="sec-4-sim-loop" class="academic-card rounded-2xl p-6 border-2 border-amber-500/50 space-y-6 scroll-mt-safe">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-300 dark:border-slate-800 pb-4">
+              <div>
+                <div class="flex items-center gap-2 text-amber-400 font-mono text-xs font-bold uppercase">
+                  <i class="ph ph-dice-five text-lg"></i>
+                  <span>SIMULATOR 04 // (N+1) PARALLEL WORLDS &amp; PERSONALITY GACHA (100+1=101)</span>
+                </div>
+                <h3 class="serif-title text-xl font-bold mt-1">平行世界（$N+1$）＆「紙(100)と鉛筆(1)＝101」性格ガチャ・シミュレーター</h3>
+              </div>
+              <button onclick="rollGachaLoop()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-cyan-600 hover:brightness-110 text-slate-950 font-serif font-bold text-xs shadow-lg transition flex items-center gap-1.5">
+                <i class="ph ph-arrows-clockwise text-base"></i>
+                <span>次のシルル紀へリープ（性格ガチャを実行）</span>
+              </button>
+            </div>
+
+            <div class="device-grid grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <!-- スライダーとN+1計算機 -->
+              <div class="device-col-span lg:col-span-5 sub-card p-5 rounded-xl space-y-4">
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-bold text-slate-300">ループ回数 $N$ を指定:</span>
+                  <span id="loop-n-badge" class="px-2.5 py-1 rounded bg-amber-500/20 border border-amber-400 text-amber-300 font-mono font-bold text-sm">N = 3 回目</span>
+                </div>
+                <input id="loopNSlider" type="range" min="0" max="6" value="3" oninput="updateNPlusOneSim(this.value)" class="w-full accent-amber-400 cursor-pointer">
+                <div class="flex justify-between text-[10px] font-mono text-slate-400">
+                  <span>N=0 (ループ前)</span>
+                  <span>N=1</span>
+                  <span>N=2</span>
+                  <span>N=3 (現代)</span>
+                  <span>N=4</span>
+                  <span>N=5</span>
+                  <span>N=6 (未来)</span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-slate-950 border border-cyan-500/30 space-y-2 text-xs">
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">平行世界の総数（$N+1$）：</span>
+                    <span id="loop-total-worlds" class="font-mono font-bold text-cyan-300 text-sm">4 個</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">当該世界の意志エネルギー総量：</span>
+                    <span id="loop-energy-sum" class="font-mono font-bold text-amber-300 text-sm">紙(100) ＋ 鉛筆(1) ＝ 101</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">シルル紀到着人類の最終帰結：</span>
+                    <span id="loop-carboniferous" class="font-mono text-rose-400">石炭紀までに完全絶滅</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 平行世界ビジュアルマップ＆ガチャ結果 -->
+              <div class="device-col-span lg:col-span-7 sub-card p-5 rounded-xl space-y-4">
+                <div class="text-xs font-mono text-slate-400 uppercase">PARALLEL WORLD TOPOLOGY (TOTAL = N + 1)</div>
+                <div id="parallel-worlds-visual" class="flex flex-wrap gap-2"></div>
+
+                <div id="loop-gacha-result" class="p-4 rounded-xl bg-slate-950 border border-amber-500/30 space-y-2 text-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4.3 最終結語 -->
+          <div id="sec-4-5" class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-amber-400/60 bg-gradient-to-r from-amber-950/30 via-slate-900 to-cyan-950/30 text-center space-y-4 scroll-mt-safe">
+            <div class="text-xs font-mono uppercase tracking-widest text-amber-400">FINAL CONCLUSION // THE ESSENCE OF HUMANITY</div>
+            <h3 class="serif-title text-xl sm:text-2xl font-bold text-white leading-relaxed">
+              「彼等は人として生きていく為に人のカラダと欲、そしてこれを抑制する意志が必要であると考えた。<br class="hidden sm:inline">
+              <span class="text-amber-300">不完全であるからこそ、それを自身の意志で完全であるように見せるのだ。</span>」
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              人々が悪行を行わない皆が幸せなだけの世界（極楽）。これを実現するためには悪行の意志を持たない人間であることが不可欠である。数億年後に人間のカタチとして復活した悟りし者達には性欲を含む欲求があり、生殖活動も可能であるため、これから生まれてくる子供の悪行の意志を正しく導くことができるだろう。そして我々が追ってきた主人公が飛ばされたシルル紀からのループもまた、永久に続いていく。
+            </p>
+
+            <!-- 神話ページ下部ナビゲーション -->
+            <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <button onclick="switchPage('page-home')" class="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-400/60 text-amber-300 hover:bg-amber-500/30 font-serif font-bold text-xs transition flex items-center gap-2">
+                <i class="ph ph-arrow-left"></i>
+                <span>۞ ① ホームページ（教祖と教義）へ戻る</span>
+              </button>
+              <button onclick="switchPage('page-parable')" class="px-4 py-2 rounded-xl bg-rose-500/20 border border-rose-400/60 text-rose-300 hover:bg-rose-500/30 font-serif font-bold text-xs transition flex items-center gap-2">
+                <span>⚖ ③ 寓話のページ（聖典寓話『ブス』）へ進む</span>
+                <i class="ph ph-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </article>
+
+<!-- =========================================================================
+           【PAGE 03】 ③ 寓話のページ：聖典寓話『ブス』・冒頭訓戒・結語の御言葉
+           ========================================================= -->
+      <article id="page-parable" class="page-view hidden space-y-10 scroll-mt-safe">
+
+        <!-- 寓話ページ・トップバナー -->
+        <div class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-rose-500/50 bg-gradient-to-br from-rose-950/25 via-slate-900/50 to-void-950 space-y-4 shadow-2xl">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-rose-500/30 pb-3">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400">
+              <i class="ph ph-scroll text-base"></i>
+              <span>PAGE 03 // SACRED PARABLE : COGNITIVE DISTORTION &amp; WISDOM</span>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-rose-500/20 border border-rose-500/40 text-rose-300">
+              第三頁：聖典寓話『ブス』編
+            </span>
+          </div>
+          <h2 class="serif-title text-2xl sm:text-3xl font-bold text-white">
+            徳永教 聖典寓話：『ブス』と認識論的歪曲フィルター
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            人間の認知がいかにして自己の欲求や劣等感によって歪められ、妄想的真実を構築するかを描いた德永教の極めて重要な教訓寓話。
+          </p>
+        </div>
+
+        <!-- 冒頭訓戒：毎晩の読み聞かせの義務 -->
+        <div id="parable-precept" class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-amber-500/60 bg-gradient-to-r from-amber-950/30 via-slate-900 to-amber-950/30 space-y-4 shadow-xl scroll-mt-safe">
+          <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400">
+            <i class="ph ph-megaphone text-base"></i>
+            <span>SACRED PRECEPT // OBLIGATORY BEDTIME READING</span>
+          </div>
+          <h3 class="serif-title text-xl sm:text-2xl font-bold text-amber-300">
+            【聖典訓戒】
+          </h3>
+          <div class="p-5 rounded-xl bg-slate-950/90 border border-amber-500/40 text-sm sm:text-base text-amber-200/95 font-serif leading-relaxed italic">
+            「德永教を信仰する者は、子が５回目の誕生日を迎えるまで毎晩これを読み聞かせるべし。」
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            幼少期より認識の歪曲と自己欺瞞の構造を物語を通じて心身に刻み込むことで、第五条「客観と自己批判」を実践し、業へと堕ちる認知の罠を未然に回避するための必須の教えである。
+          </p>
+        </div>
+
+    <!-- 聖典寓話『ブス』全文＋思考変形フィルター解析 -->
+        <div id="parable-main-text" class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-rose-500/60 bg-gradient-to-br from-rose-950/20 via-slate-900/60 to-void-950 space-y-6 shadow-2xl scroll-mt-safe">
+          <div class="border-b border-rose-500/30 pb-4">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400">
+              <i class="ph ph-scroll text-base"></i>
+              <span>SACRED PARABLE // COGNITIVE DISTORTION &amp; DESTINY</span>
+            </div>
+            <h3 class="serif-title text-2xl sm:text-3xl font-bold text-rose-300 mt-1">
+              教えをより堅固にするための寓話：『ブス』
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">
+              ※本寓話では主人公を「ブス」、クラスで2番目に可愛い女子を「2番」、転校生を「少年院」と呼称するが、これは主人公「ブス」の主観的呼称をナレーションにも流用した文学的・認識論的表現である。
+            </p>
+          </div>
+
+          <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 space-y-3">
+              <div class="font-serif font-bold text-amber-300 text-sm">【前編】</div>
+              <p>
+                クラスで幅を利かせているカーストトップ女グループは、容姿端麗な者達のみで構成されていた。そこに所属しているブスは、確かにイケメン男グループとトークはできれども、それは外堀から埋めていくだとか、可愛い女の子達に直接聞けば拒否されるからとブスを連絡先交換の仲介者として利用されているに過ぎない。
+              </p>
+              <p>
+                そんなある日、下校中のブスに、隣の男子校の生徒で構成された｢イケイケイケメンズ｣の1人が連絡先交換を要求し、ブスはこれに応じた。数日後の休日、ブスは自室で小説を読んでいると彼からの連絡通知音が聞こえた。｢ぼくの家に来て｣ブスは走った。顔に蓄えた脂肪を揺らし、汗により皮膚が湿ってきていることを感じる。｢まさかこの私が、男に求められる日が来るなんて。｣彼の家に着くと突然冷静になった。｢もしかすると私の連絡先と他の女性のそれとを間違えたのかもしれない。だがそんなことよりも、もし私がイケイケイケメンズと付き合ったならば、カーストトップグループ内での地位が確実に向上するのは間違いない。｣という自己顕示欲が彼女の脳内を支配していた。インターホンを押す。誰も出ない。直後嫌な妄想が膨らむ。｢もしやどこからか見られていて、笑い者にされているのではないか。しかし、もしかするとこの私が彼女たちと｢彼氏の容姿｣で肩を並べられる日が来るかもしれない。｣ブスはそう考え、待ち続けた。ふと時計を確認すると彼の連絡から3時間が経過していることに気付き、｢私が来るのが遅くて出かけてしまったんだ。｣ブスはそう考え、収まった胸の高鳴りの儚さを感じながら帰路に就いた。
+              </p>
+              <p>
+                翌朝。ホームルーム前、何やら皆そわそわしているようだ。ブスはいつものように重い頬肉を引き上げ話しかける。｢今日なんかあったっけ？｣クラスで三番目に可愛い女が整った唇を動かす。｢今日転校生が来るんだよ！それもこのクラスにね！｣ブスは言われてみるとそうであったなと数週間前の担任の話を思い出す。｢確か少年院から出てくるらしい。私たちの高校偏差値は35であるから、まあ妥当か。｣そんなことを考えていると｢おはよー！ブス！！｣ブスの後ろから、クラスで4番目に可愛い女が話しかけて来た。ブスは目を細め、張りながらも震えた声で｢おはよう｣と言う。4番は確かに平均よりは可愛い。しかしこのクラスの上位3人と比べれば明らかに見劣る。小中では顔を合わせた者皆からチヤホヤされていたのだろうが、このクラスで4番をチヤホヤする者は少ない。悔しさから来る当て付けか、とにかく自身を用いて劣等感を誤魔化している4番のことが、ブスははっきりと嫌いであった。クラスで二番目に可愛い女はいつものように自席で本に目を落としている。クラスで1番に可愛い女はまだ学校に来ていない。1番は先日できた彼氏と毎日のようにお泊まりをしており、ここ最近は昼頃からの登校が常態化している。チャイムが鳴り担任が入ってくる。担任は男性の体育教師であり、顔は悪くないのだが甚だしく声がでかい。担任はいつもより更に大きな声で｢今日はみんなに新しい仲間ができるたいへんめでたい日だ！さあ、入っておいで｣静かに開けられるドアから覗いた顔を例えるならば、それは【昭和男児のステレオタイプ】であろう。｢坊主じゃん｣右後ろから聞きなれた声が通った。一斉に集まった視線が確認したのは、1番であった。隣に立つ彼に別れを言い教室に入って来ると、再び先刻と同様の発言を行った。ホームルームが終わるとクラスの者達は転校生の元へ集まった。何して少年院に入ったの？家はどの辺(あたり)？部活、入るの？｢ごめん。女性が苦手なんだ。｣少年院はクラスの端で固まっていた、陰キャと呼称される者達へ話しかけに行った。カーストトップグループは、これを横目に新たなクラスメイトになったイケメンについての評論会を開いていた。3番｢彼超かっこいい。あの鋭い目に睨まれながら、至上のオーガズムに至りたいわ。｣2番｢不埒よ3番。私は彼の丸太のような太ももを枕にして、彼の語るシロナガスクジラのように大きな夢の、低めの声と豊富な語彙で紡がれる1フレーズ1フレーズを、丁寧に品詞分解したいわ。｣3番は4番と1番へ交互に顔を向けた後、問うた。｢2人は？｣4番はブスをちらりと確認してから、少年院の顔のどこが良くて、どこが悪いかを長々と詳論し始めた。一限の始まりを告げるチャイムが鳴ると、1番はそのビー玉のように大きく綺麗な目を輝かせながら、薄く小さくもリップにより色のはっきりした唇を動かす。
+              </p>
+              <p class="font-serif font-bold text-rose-400 py-1">
+                ｢私、少年院のこと好きかも｣
+              </p>
+              <p>
+                3番｢えーー？？1番彼氏いるじゃん！ダメだよーー｣2番｢本当に好きなら、少年院に私のどこが素敵か聞いてきなさい。｣1番｢それって少年院が私のこと眼中に無いってこと？！てか前カレとは今朝別れたよ。話が面白くなかったんだ。｣ブス｢えー？もったいないよお。せっかく超カッコイイ彼氏だったのに！｣ブスは今回も上手いところで発言ができたと考えた。少しの間の後、4番が口を開く｢そうだよー。てか別れたその日に次の男狙い出すとか1番尻軽すぎー｣空気が凍った。数秒後一限の数学の担当教員が入ってきた。1番達は2番の席を囲むように座る為、周辺から借用していた椅子を戻し自分たちの席へ帰った。授業中ブスは、今日も何とか会話に入れた安堵感と、4番の失態への優越感に浸っていた。放課後、部活に入っていないブスは一人で下駄箱に行く。途中職員室前で少年院が担任と話しているのが見えた。丁度話が終わったのか、こちらへ向かって来る。｢ねえ｣話しかけられた。ブスは、女に興味が無いと言いながらも、やはり男子高校生は性欲に支配された獣であるなと思いつつ少年院を見る。ブス｢何か用？｣少年院｢お前、なんであいつらと話しているの？｣ブスは戸惑った。ここまでストレートに自身のコンプレックスを指摘されたのは初めてのことであるからだ。｢どういう意味？｣少年院は付いてこいと言い、歩き出した。運動部室前に来ると、少年院は足を止めた。少年院の目線を探り視線を飛ばしてみると、すぐ近くのグラウンド前の日陰で1番、2番、3番、4番が小さく集まっている。皆所属部は異なるはずなのに、何故だ。ブスは昨日の嫌な予感が当たっていたのかと考えた。｢こっそり近づいて、会話を聞いてこいよ｣少年院が言う。
+              </p>
+              <p>
+                3番｢えースゴ！頑張ったね｣1番｢ふふ早速先週から来月の支部大会に向けた練習だよ｣2番｢あなたの努力は純粋よ。私の人間美学を体現しているわ｣
+              </p>
+              <p>
+                4番がブスに気づいた。｢あっ｣ブスは少年院の視線を感じながら、ふわふわと4人の元へ近づいていく。｢あ、あれ？1番って部活入ってたっけ…？あっ！そ、そういえばね！昨日、イケイケイケメンズに家へ呼ばれたの｣暫くの間の後、2番が口を開いた。｢あなた達、そろそろはっきりさせましょうよ｣2番は自身の正しさに忠実だ。自身の正しさを惑わす隔てを全て払拭し続けようと内的動機から努めることが、彼女の人間美学だ。2番｢私達、友達でもなんでもないわよね。これ以上無理に話しかけてくるのはやめてください。お願いします｣3人は頭を下げた。4番は、数秒もたついた後、頭を下げた。ブスは4番への怒りにより声が出なくなった。いや、出ている。辺りを見渡すと目前の4人どころか、少年院もグラウンドの者達も校内の者ですら突如高周波に放射された空気を伝い襲う振動から鼓膜を守っている様子が確認できた。
+              </p>
+              <p class="font-serif font-bold text-rose-500 py-1 text-sm">
+                ｢4番ﾝﾝﾝお前のせいｨｨｨｨダｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧ!!!!!!!｣
+              </p>
+              <p>
+                2番｢違う！あなたは大きな勘違いをしているわ！！夏休み明けの席替えで、あなたが落としたペンを3番が拾ったのは、それが【当然のことであったから】ただそれだけよ！あなたはそれ以降頻繁に私たちに話しかけてくるようになったけれど、それももうやめて！！私達はあなたのことを、ニートの部屋に放られたカップ麺の汁から生まれた羽虫の糞程も友達だと認識した覚えは無いわ！！｣<br>
+                3番｢私は早い段階で貴方にはっきり言おうって言っていたのだけれど、それは非常に可哀想であるから、表面的にでも仲良くしようよと、4番は言ったのよ！！もし貴方がこれまでの私達との関係に満足していたのなら、最も感謝すべき相手は4番よ！！！｣<br>
+                ｢嘘よｫｫｫｧｧｧｧｧｧｧｧ!!!!!!!!ヨンバンは貴方達に容姿で負けて、非常に強い劣等感を持っていたから、明確に下である私をグループに入れる事で自己肯定感を保持していただけｯｯ!!!!!!!!そうにキマっているわｧｯｯｯ!!!!｣<br>
+                1番｢なんでそうなるの？！4番は貴方が発言する毎に会話を中断していた私達の流れに抗ってまで、貴方を話に入れようとしていたのよ？！｣<br>
+                3番｢それに貴方、イケメン達に私達の連絡先をよく送っているわよね…。どのようにして我々の連絡先を入手したか問うと、彼等は口を揃えて貴方から美人を紹介すると言い寄られたので連絡先を交換し、しかしいつになっても貴方から連絡先が送られてこないから催促をすれば、呆れたような態度の返信の後に私達の連絡先が送られてきたと言うわ。｣<br>
+                1番｢それに、、それに貴方の言うイケイケイケメンズは私が今朝別れた元カレよ！！！！昨日の夕方、貴方が突然家を訪ね参り、これに応答してみなければ玄関前で3時間以上もの間立ち尽くしていたと。これが酷く恐ろしかったのだと、今朝振られたのよおぉぉおおお！！！！｣
+              </p>
+              <p>
+                1番はその宝石のように目を力任せに潰し泣きながら、膝を曲げ落とし地面へ手をついた。ブスの発狂はいつの間にか止んでいた。
+              </p>
+              <p>
+                ブスは彼女達の自身に対する態度に一切気付いていなかった。ブスは不登校で根暗で学業も運動もできなかったが、夏休み明けのその日、勇気を出して登校した。授業中ペンを落とすとたまたま隣の席だったカースト最上位の3番がペンを拾ってくれた。ブスはその日、なんて感謝の意を伝えようかと必死に思考し、帰りのホームルーム後、ついに伝えた。<br>
+                ブス｢ペン拾ってくれて、あ、ありがとう｣<br>
+                3番｢ん？あ〜さっきね？うん！どういたしまして！｣<br>
+                ブスはその言葉を聞きながら、何故か周りからどう見られているかを客観視していた。｢私今、カースト最上位の、イケてる人達の内の1人だと思われている！｣以降、その日に最上位カーストへ確立された、という体の地位を維持すべく、3番に何を話しかけようか毎晩考え、翌日実行するという日々が始まった。流転して3番の所属するカーストトップグループの会話に割り込むことも多くなり、現在に至る。｢自分には文字通り一切の長所がないけれど、唯一誇れることがある。それはクラスカーストトップグループに所属していることだ。｣このようにブスは客観的な｢そういう体裁｣の自身のクラスカースト上位維持のため始めた行動が、いつの間にか思い込みにより【そういう体裁】を【事実】と誤認していった。これは本人からすると自他共に認められた【絶対的事実】であるのだ。
+              </p>
+            </div>
+
+            <!-- あとがき 1 -->
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-amber-500/30 space-y-3">
+              <div class="font-serif font-bold text-amber-300 text-sm">【あとがき：思考の二層構造と認知の変形】</div>
+              <p>
+                何故イケイケイケメンズは｢僕の家に来て｣とブスへ連絡したのか。結論から言えばイケイケイケメンズは連絡していない。
+              </p>
+              <p>
+                ブスの思考を二層に分けると分かりやすい。具体的には、生得的な本能を含めた思考の根幹を、<strong>｢根底思考｣</strong>、ブスの誤認により生まれた思考を歪ませるものを<strong>｢根底思考を通し、誤認下における思考へ変形させる。｣</strong>という風にだ。ブスからすればこの変形された思考が絶対的な事実である。
+              </p>
+              <p>
+                ブスがイケイケイケメンズと連絡先を交換した日、ブスは学校で1番がイケイケイケメンズと付き合ったことを知り、｢根底思考｣は激しい嫉妬を起こし、この事実を強烈に忌避した。ただ、ブスはこれを認知しなかった。何故ならば激しい嫉妬(思考のエネルギー)と事実への忌避という2つの感情と、耳にした既成事実は｢思考のエネルギーを通し、このエネルギーを変化させるもの｣を通ったからである。これによりブスの中での事実を、｢私に憧れの彼が言いよってきた｣→｢いつもの男子とは違う、ブス自身に興味がある人だ｣→｢イケイケイケメンズから連絡が来た。内容は、ブスが家へ呼び出されるというものであった。｣と作られていったのである。
+              </p>
+            </div>
+
+            <!-- 保護所での対話 -->
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 space-y-3">
+              <div class="font-serif font-bold text-amber-300 text-sm">【後編】</div>
+              <p>
+                発狂事件後、ブスは再び不登校になった。ブスは、児童相談所の職員に話しかける。<br>
+                ブス｢先生、私は普通になれるのだろうか。勿論普通という言葉には定義こそあれど、具体的に何が普通で何が異常かということは、十人十色であると承知している。だが、今の私を客観的に見たものの殆どは、やはり私へ哀れみの目を向けてくるのではないだろうか。｣<br>
+                職員A｢うん。君は普通ではないよ。普通を、世界人口を母集団とした時の最も高い割合の行動、選択、状況と定義するならばね。｣<br>
+                ブス｢私のお母さん、私が生まれた時に死んでしまったんだ。お母さんが生きていれば、父ちゃんも優しくて、普通の家庭であったのかもしれなかったよね…｣<br>
+                ブスは垂れた目を閉じながら、少しでも声を抑えようと潰れた鼻とカサついた大きな口に力を入れ、歪ませた。<br>
+                職員A｢親から子への性的虐待は、どのような理由があっても許されてはならない。勿論他の性加害も許されてはならないけれど、子から信頼されて然るべきである親が、普通ならば当然子の心の拠り所になるべきである親が、子に性加害を行うことは特に許されてはならないことだと私は思うよ。だからキミのお父さんは普通ではないし、そんな父親を持つキミも普通ではないね。｣<br>
+                職員Aの脳裏で、ブスの父親の職場へあなたの娘を保護したと伝えに行った際の彼の返答が再生された。
+              </p>
+              <p class="italic text-slate-400 pl-4 border-l border-slate-700">
+                ブスの父親｢子連れの低収入に興味は無いと女に言われても、おれはアイツをここまで育ててきたんですぜ？アイツを世界で1番愛しているのは間違いなくこの私なんですよ。そんな私がアイツに｢性暴力｣を振るったと、アンタは本気でお考えなんですかい？｣
+              </p>
+              <p>
+                職員Aはため息を吐いた後、ゆっくりと口を開いた。<br>
+                職員A｢与えられた運命を乗り越えなさい。命の運ばれ方と書いて運命。運命を神から与えられたものだと考える者たちがいるが、私はそうは思わない。運命とは単なる人生(命)の運ばれ方であるのだ。自らにより変えられる、可変的な事象と考えるのか、自らが運命の受け身対象であると考えるのか。これは個々人の考え方次第だ。普通じゃないキミは、運命をどう考える？｣<br>
+                ブス｢運命は、ある程度決まっているよ。だってそうじゃないと、あんな奴の子供になんてならないもの。｣<br>
+                職員A｢確かに、定義が甘かったね。それじゃあ、運命を決められるのは、運命を自らで変えることができる対象物であると認知した以降であるとすればどうだろう。｣<br>
+                ブス｢それなら私は、強いられた運命を、壊したい。｣
+              </p>
+              <p>
+                児童相談所のインターホンが鳴った。職員Aはブスにちょっと待っていてねと言い、外へ応答する。<br>
+                職員A｢お、来たな｣<br>
+                少年院｢ブスのプリントを持ってきた。ブスに直接渡したい。｣<br>
+                職員Aはブスを見る。ブスは少し考えた後、玄関へ向かう。少年院は、ブスが不登校になってしまった直接の原因は自分であるなと罪悪感を感じていた。<br>
+                少年院｢よう。これ。｣<br>
+                ブス｢こ、こないだはごめんね。私、え｣<br>
+                少年院の後ろに、2番がいた。<br>
+                2番｢何かしら？｣<br>
+                職員A｢何かしら？じゃないだろう。ブスから話は聞いたが、言い方ってものがあるだろう言い方ってものが。｣<br>
+                2番｢お父さん、聞いて。私たちだって元は、もっとオブラートに包んだ言葉を用いてブスに認知の誤りを指摘するつもりだったのよ。けれど、あの日は不運にもブスが直接の原因となり1番が交際相手と別れた日であったの。彼女の背景には同情するし、実際していたのだけれど。タイミングが悪かったとしか言いようが無いわね。風呂上がりの便意のようなものよ。とは言っても、悪かったとは思っているのよ。あの日は感情に任せて言葉を紡いでしまって、ごめんなさい。｣<br>
+                ブス｢う、うううん。私が全部悪いからいいの。｣<br>
+                2番｢私が全部悪いとは、どういう意味かしら？｣<br>
+                少年院｢ブス、もっと自分を大切にしなよ。今のお前は心も不細工だよ。｣<br>
+                2番｢少年院の言う通りね。貴方のその考え方は、【思考の放棄】よ。この5文字以外でこれを抽象化した簡潔な言葉を要求されるなら、それは極めて困難な問であると言えるわ。｣<br>
+                ブス｢だから私は、異常なのよ！！！｣<br>
+                皆が静止した。数秒後、2番のスカートから伸びる白い足がこの静止を破り動き出す。<br>
+                2番｢帰るわ。論理的な指摘を感情で踏みつぶし無視するような人間と、建設的で生産性のある対話ができる気がしないから。｣<br>
+                2番は自転車に跨り｢さよなら。｣と言えば、走り去ってしまった。
+              </p>
+              <p>
+                突然だが、何故2番はブスに謝りに来たのかについてである。2番の父親は児童相談所の一時保護所に従事しており、ブスがここで居住していることを、保護された日に2番へ伝えていた。更に、ブスがカーストトップグループに話しかけるようになってからは、2番から父親に相談するようになっており、2人の会話で度々ブスの話題が起こるようになっていた。このようにして事件の翌日、｢ブスが再び不登校になった原因は何だ。｣と、2番からブスの事件について聞いた父親は、2番に｢私はお前の主観が入った話を聞いただけでは、自分の娘だからと手放しでお前の行動を肯定することはできない。少なくともブスを傷つけてはしまったのだから、明日の放課後部活は休み謝りに来なさい。｣と言っていた。
+              </p>
+              <p>
+                2番は｢勉学、運動、芸術センス等どれをとっても無才であり、容姿にも恵まれていないブスは、父親と近親相姦を行っていた。更に金を払えば誰にでも股を開くようだ。｣と噂になっていたブスを、父親から正しいブスの背景を聞いたことにより哀れんでいた。しかしブスが話しかけてくるようになり、少しずつ｢哀れみ｣は、不快感により薄れていった。最終的に、1番とイケイケイケメンズ破局の直接的な原因になったのみならずそれを理解していない発言から突発的に込み上げた怒りにより、あのような発言をしたのだ。しかし、父親の言うことも正しくはあるため、謝りには赴いたという次第だ。少年院は｢また来るからな｣と言い、児童相談所を後にした。
+              </p>
+              <p>
+                それからというもの、少年院は3日に1度の頻度でプリントを渡しに、ブスを訪ねていた。2人の会話は日常的な話題に留まらず、互いのセンシティブな話題をも取り扱うようになった。<br>
+                少年院｢僕が少年院に入ったのは、前の学校で級友であった女にはめられたからなんだ。前の学校の僕のクラスには聴覚過敏の女の子がいたんだが、その子の耳元でわっ！と驚かすような虐めが行われていた。最終的に彼女は重い精神障害を患ってしまい、終に虐めの実態が学校側に発覚したんだ。しかし、虐めの主犯格の女子グループにより、当時素行の悪かった僕が虐めの先導者だとされた。その結果少年院に入れられたという訳さ。｣<br>
+                2人は次第にこの会談を楽しみにするようになっていった。それは心が開かれていったという理由もあるだろうが、恋愛的な意味でもそうだろう。
+              </p>
+              <p>
+                その日、少年院はいつもの様に｢また3日後な｣と児童相談所を後にした。翌日、虐待事実の客観的立証が困難であると判断され、行政規定に基づく一時保護の解除が通達された。
+              </p>
+              <p>
+                それから2日後、児童相談所のインターホンが鳴る。<br>
+                職員Aは、赤くなった目を擦りながら、遺品の手紙を取り、ドアを開ける。
+              </p>
+            </div>
+
+            <!-- あとがき 2 -->
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-rose-500/40 space-y-3">
+              <div class="font-serif font-bold text-rose-300 text-sm">【あとがき：客観的立証の困難と歪曲された事実の生成】</div>
+              <p class="text-xs text-slate-400 italic">
+                もし、貴方が上の余韻を楽しみたいならば以下を読むことは推奨しない。
+              </p>
+              <p>
+                何故ブスの訴える性虐待を客観的立証が困難、つまり証拠不十分だと判断されたのかについてである。以下に、ブスが性虐待にあったと保健の先生へ告白する直前までを簡潔にまとめた。
+              </p>
+              <p>
+                ある日の夜。ブスはマスターベーションの際に偶然、｢性虐待･近親相姦｣をジャンルとするAVを見た。思春期であるブスはこれへ強い嫌悪を抱き、更にもし父親から無理矢理に犯されれば、自身はより可哀想な人間になると考えた。これが<strong>｢思考を通し、誤認下における思考へ変形させる。｣というブスの思考フィルター</strong>を通り、ブス自身の容姿、能力から大きく乖離した水準のプライドを満たすために、軽蔑している父親に肘や肩がぶつかったことを強引に結びつけ、ブスの中で｢性虐待をされた｣と歪めた事実を生み出したのである。
+              </p>
+              <p class="text-xs text-slate-300 bg-slate-900/90 p-3 rounded-lg border border-slate-800">
+                <strong>【教義第五条および『強固な世界の理』との構造的対比】</strong><br>
+                神話編（第3章）において説かれた通り、利他的修行と自己規律によって徳を積んだ者が脳内で『強固な世界の理』を確立した時、それは3次元の物理法則すら書き換える救済の異能として顕現する。しかし、徳を積む努力（第二条）と謙虚な学び（第三条）を放棄し、肥大化した自己顕示欲と劣等感（②「欲」）のみを燃料として脳内の「思考変形フィルター」を稼働させた時、人が生み出すのは客観的事実をねじ曲げる妄想の地獄（牽強付会）に他ならない。これこそが第五条「常に自己批判の省察にあれ」が要請される所以である。
+              </p>
+              <p class="text-amber-300 font-serif pt-2 border-t border-slate-800">
+                以上は教えをより堅固にするための寓話である。
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- 結語：德永様からのありがたいお言葉 -->
+        <div id="parable-epilogue-words" class="academic-card rounded-2xl p-6 sm:p-8 border-2 border-amber-400/70 bg-gradient-to-r from-amber-950/40 via-slate-900 to-cyan-950/40 text-center space-y-5 shadow-2xl scroll-mt-safe">
+          <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400">
+            <i class="ph ph-quotes text-base"></i>
+            <span>SACRED EPILOGUE // WORDS OF MASTER TOKUNAGA</span>
+          </div>
+          <h3 class="serif-title text-xl sm:text-2xl md:text-3xl font-bold text-white leading-relaxed">
+            「我々は思考することができます。つまり一つの物事を様々な観点から見ることが可能なのです。<br class="hidden sm:inline">
+            <span class="text-amber-300">学びを止めた思考者は純粋ではありません。常に自己批判の省察にありなさい。</span>」
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed font-serif italic">
+            ── 德永様 御垂示
+          </p>
+
+          <!-- 寓話ページ下部ナビゲーション -->
+          <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <button onclick="switchPage('page-home')" class="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-400/60 text-amber-300 hover:bg-amber-500/30 font-serif font-bold text-xs transition flex items-center gap-2">
+              <i class="ph ph-arrow-left"></i>
+              <span>۞ ① ホームページへ戻る</span>
+            </button>
+            <button onclick="switchPage('page-myth')" class="px-4 py-2 rounded-xl bg-cyan-500/20 border border-cyan-400/60 text-cyan-300 hover:bg-cyan-500/30 font-serif font-bold text-xs transition flex items-center gap-2">
+              <span>∞ ② 神話の紹介ページへ戻る</span>
+              <i class="ph ph-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+    </main>
+  </div>
+
+  <!-- フッター -->
+  <footer class="border-t border-slate-300 dark:border-slate-800 py-6 mt-12 text-center text-xs text-slate-500 font-mono no-print">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <span>ARCHIVE COMPLETE // CODEX METAPHYSICA-4D (TOKUNAGA CROSS-PAGE EDITION)</span>
+      <span>3 PAGES &amp; 4 INTERACTIVE SIMULATORS &amp; TOKUNAGA CANON INCLUDED</span>
+    </div>
+  </footer>
+
+  <!-- 全ページ横断制御・シミュレーター用スクリプト -->
+  <script>
+let isHeaderCollapsed = false;
+function toggleHeaderCollapse() {
+  isHeaderCollapsed = !isHeaderCollapsed;
+  const body = document.getElementById('collapsibleNavBody');
+  const icon = document.getElementById('headerCollapseIcon');
+  const text = document.getElementById('headerCollapseText');
+  if (isHeaderCollapsed) {
+    body.style.display = 'none';
+    icon.className = 'ph ph-caret-down text-sm';
+    if (text) text.textContent = 'メニュー展開';
+  } else {
+    body.style.display = 'block';
+    icon.className = 'ph ph-caret-up text-sm';
+    if (text) text.textContent = 'メニュー収納';
+  }
+}
+
+    let currentDeviceMode = 'pc';
+
+    function detectRecommendedDevice() {
+      const w = window.innerWidth;
+      if (w < 640) return 'mobile';
+      if (w < 1024) return 'tablet';
+      return 'pc';
+    }
+
+    function selectDeviceMode(mode, closeModalAfter = false) {
+      currentDeviceMode = mode;
+      document.body.setAttribute('data-device', mode);
+      const modes = ['mobile', 'tablet', 'pc'];
+      modes.forEach(m => {
+        const btn = document.getElementById(`header-dev-${m}`);
+        const modalBtn = document.getElementById(`modal-btn-${m}`);
+        if (!btn) return;
+        if (m === mode) {
+          btn.className = 'px-2 py-1 rounded-md text-xs font-bold transition flex items-center gap-1 bg-cyan-600 text-white shadow';
+          if (modalBtn) modalBtn.classList.add('ring-2', 'ring-amber-400');
+        } else {
+          btn.className = 'px-2.5 py-1 rounded-md text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-300/50 dark:hover:bg-slate-800 transition flex items-center gap-1';
+          if (modalBtn) modalBtn.classList.remove('ring-2', 'ring-amber-400');
+        }
+      });
+      if (closeModalAfter) closeDeviceModal();
+    }
+
+    function openDeviceModal() {
+      const modal = document.getElementById('deviceSelectModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      }
+    }
+
+    function closeDeviceModal() {
+      const modal = document.getElementById('deviceSelectModal');
+      if (modal) {
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.style.display = 'none';
+        }, 300);
+      }
+    }
+
+    // 3ページ分割管理
+    let currentPageId = 'page-home';
+    let isUnifiedView = false;
+    let isEdgePanelOpen = false;
+    let currentEdgeMode = 'toc';
+
+    function switchPage(pageId) {
+      currentPageId = pageId;
+      isUnifiedView = false;
+      applyViewState();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleUnifiedView() {
+      isUnifiedView = !isUnifiedView;
+      applyViewState();
+      if (!isUnifiedView) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function applyViewState() {
+      const pages = ['page-home', 'page-myth', 'page-parable'];
+      const btnText = document.getElementById('unifiedBtnText');
+      const edgeBtnText = document.getElementById('edgeUnifiedToggleBtn');
+
+      pages.forEach(pid => {
+        const pEl = document.getElementById(pid);
+        const navBtn = document.getElementById(`nav-btn-${pid}`);
+        if (!pEl) return;
+
+        if (isUnifiedView) {
+          pEl.classList.remove('hidden');
+          if (navBtn) {
+            navBtn.className = 'px-3 py-2 rounded-xl font-serif font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 border bg-slate-800 text-slate-300 border-slate-700';
+          }
+        } else {
+          if (pid === currentPageId) {
+            pEl.classList.remove('hidden');
+            if (navBtn) {
+              if (pid === 'page-home') navBtn.className = 'px-3 py-2 rounded-xl font-serif font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 border bg-amber-600 text-white border-amber-400 shadow';
+              else if (pid === 'page-myth') navBtn.className = 'px-3 py-2 rounded-xl font-serif font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 border bg-cyan-600 text-white border-cyan-400 shadow';
+              else if (pid === 'page-parable') navBtn.className = 'px-3 py-2 rounded-xl font-serif font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 border bg-rose-600 text-white border-rose-400 shadow';
+            }
+          } else {
+            pEl.classList.add('hidden');
+            if (navBtn) {
+              navBtn.className = 'px-3 py-2 rounded-xl font-serif font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 border bg-slate-900/60 text-slate-400 border-slate-800 hover:text-slate-200';
+            }
+          }
+        }
+      });
+
+      if (isUnifiedView) {
+        if (btnText) btnText.textContent = '3ページ個別切替モードへ戻る';
+        if (edgeBtnText) edgeBtnText.textContent = '3ページ個別切替モードへ戻る';
+      } else {
+        if (btnText) btnText.textContent = '全3ページ一括表示へ切替';
+        if (edgeBtnText) edgeBtnText.textContent = '全3ページ一括表示へ切替';
+      }
+    }
+
+    function handleTriggerClick(mode) {
+      if (isEdgePanelOpen && currentEdgeMode === mode) {
+        closeEdgePanel();
+      } else {
+        openEdgePanelWithMode(mode);
+      }
+    }
+
+    function openEdgePanelWithMode(mode) {
+      switchEdgeMode(mode);
+      openEdgePanel();
+      if (mode === 'glossary') {
+        setTimeout(() => {
+          const input = document.getElementById('glossarySearchInput');
+          if (input) input.focus();
+        }, 200);
+      }
+    }
+
+    function switchEdgeMode(mode) {
+      currentEdgeMode = mode;
+      const tocView = document.getElementById('edgeViewToc');
+      const glossaryView = document.getElementById('edgeViewGlossary');
+      const tocBtn = document.getElementById('edgeTabTocBtn');
+      const glossaryBtn = document.getElementById('edgeTabGlossaryBtn');
+
+      if (mode === 'toc') {
+        tocView.classList.remove('hidden');
+        glossaryView.classList.add('hidden');
+        tocBtn.className = 'py-2 px-3 rounded-lg text-xs font-serif font-bold transition flex items-center justify-center gap-1.5 bg-cyan-600 text-white shadow';
+        glossaryBtn.className = 'py-2 px-3 rounded-lg text-xs font-serif font-bold transition flex items-center justify-center gap-1.5 text-slate-400 hover:text-amber-300';
+      } else {
+        tocView.classList.add('hidden');
+        glossaryView.classList.remove('hidden');
+        tocBtn.className = 'py-2 px-3 rounded-lg text-xs font-serif font-bold transition flex items-center justify-center gap-1.5 text-slate-400 hover:text-cyan-300';
+        glossaryBtn.className = 'py-2 px-3 rounded-lg text-xs font-serif font-bold transition flex items-center justify-center gap-1.5 bg-amber-600 text-white shadow';
+      }
+    }
+
+    function openEdgePanel() {
+      isEdgePanelOpen = true;
+      const wrapper = document.getElementById('edgePanelWrapper');
+      const backdrop = document.getElementById('edgePanelBackdrop');
+      wrapper.classList.remove('translate-x-[calc(100%-2.6rem)]');
+      wrapper.classList.add('translate-x-0');
+      backdrop.style.display = 'block';
+      backdrop.classList.remove('hidden');
+      setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+    }
+
+    function closeEdgePanel() {
+      isEdgePanelOpen = false;
+      const wrapper = document.getElementById('edgePanelWrapper');
+      const backdrop = document.getElementById('edgePanelBackdrop');
+      wrapper.classList.remove('translate-x-0');
+      wrapper.classList.add('translate-x-[calc(100%-2.6rem)]');
+      backdrop.classList.add('opacity-0');
+      setTimeout(() => {
+        backdrop.classList.add('hidden');
+        backdrop.style.display = 'none';
+      }, 300);
+    }
+
+    // 全ページ横断ジャンプ（必要に応じ自動でページを切り替えてスクロール）
+    function edgeJump(pageId, targetElementId) {
+      currentPageId = pageId;
+      isUnifiedView = false;
+      applyViewState();
+      closeEdgePanel();
+
+      setTimeout(() => {
+        const el = document.getElementById(targetElementId);
+        if (el) {
+          const headerEl = document.getElementById('mainSiteHeader');
+          const headerHeight = headerEl ? headerEl.offsetHeight : 100;
+          const safeOffset = headerHeight + 30;
+          const rect = el.getBoundingClientRect();
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const targetY = Math.max(0, rect.top + currentScrollY - safeOffset);
+
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+          el.classList.remove('flash-highlight');
+          void el.offsetWidth;
+          el.classList.add('flash-highlight');
+        }
+      }, 100);
+    }
+
+    function toggleTheme() {
+      const htmlEl = document.documentElement;
+      const icon = document.getElementById('themeIcon');
+      htmlEl.classList.toggle('dark');
+      if (htmlEl.classList.contains('dark')) {
+        icon.className = 'ph ph-sun text-base text-amber-400';
+      } else {
+        icon.className = 'ph ph-moon text-base text-slate-700';
+      }
+    }
+
+            
+   function renderGlossary(filterText = '') {
+      const container = document.getElementById('glossaryListContainer');
+      if (!container) return;
+
+      const normalizeText = str => str.toLowerCase().replace(/德/g, '徳');
+      const q = normalizeText(filterText.trim());
+      const matched = glossaryTerms.filter(item => {
+        if (!q) return true;
+        const haystack = normalizeText(item.term + ' ' + item.reading + ' ' + item.keywords + ' ' + item.def);
+        return haystack.includes(q);
+      });
+
+      if (matched.length === 0) {
+        container.innerHTML = `
+          <div class="p-6 rounded-xl bg-slate-950/60 border border-slate-800 text-center text-slate-400">
+            <div>該当する語句が見つかりませんでした。</div>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = matched.map(item => `
+        <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-amber-500/40 transition space-y-1.5">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="font-serif font-bold text-xs text-amber-300">${item.term}</div>
+              <div class="text-[9px] font-mono text-slate-500">${item.reading}</div>
+            </div>
+            <span class="px-1.5 py-0.5 rounded text-[9px] font-mono border ${item.badgeColor} flex-shrink-0">
+              ${item.badge}
+            </span>
+          </div>
+          <p class="text-[10px] text-slate-300 leading-relaxed">${item.def}</p>
+          ${item.page && item.target ? `
+          <div class="pt-1 flex justify-end">
+            <button onclick="edgeJump('${item.page}', '${item.target}')" class="px-2 py-0.5 rounded bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-[9px] flex items-center gap-1">
+              <span>該当ページ・箇所へ飛ぶ</span>
+              <i class="ph ph-arrow-right"></i>
+            </button>
+          </div>
+          ` : ''}
+        </div>
+      `).join('');
+    }
+    function filterGlossary() {
+      renderGlossary(document.getElementById('glossarySearchInput').value);
+    }
+
+    function quickSearchGlossary(keyword) {
+      const input = document.getElementById('glossarySearchInput');
+      input.value = keyword;
+      renderGlossary(keyword);
+    }
+
+    function clearGlossarySearch() {
+      quickSearchGlossary('');
+    }
+
+    function openGlossaryTerm(keyword) {
+      openEdgePanelWithMode('glossary');
+      quickSearchGlossary(keyword);
+    }
+
+const glossaryTerms = [
+     { term: '思考力と思考の大地形', reading: 'しこうりょくとしこうのだいちけい', keywords: '思考力 思考の大地形 知識の広さ 知識の深さ 知識の質 外部からの情報 五感 AI 教材 探索', badge: '認識・思考論', badgeColor: 'bg-cyan-500/30 text-cyan-200 border-cyan-400', def: '知識の広さ・深さ・質・外部情報の4つを統合した「思考の大地形」を、思考者がいかに探索できるかという能力。', page: 'page-home', target: 'thought-topology' },
+      { term: '思考者の行動可能範囲・所持道具', reading: 'しこうしゃのこうどうかのうはんい しょじどうぐ', keywords: '思考処理速度 思考の高さ 育んできた正しさ 変化対応力 TPO 情報開示 常識 倫理観 所持道具', badge: '認識・思考論', badgeColor: 'bg-amber-500/30 text-amber-200 border-amber-400', def: '思考処理速度、思考の高さ、育んできた正しさ、思考の変化対応力（TPOに応じた情報開示量含む）の4要素を統合した探索手段。', page: 'page-home', target: 'thought-topology' },
+      { term: '社会的権力の構成公式', reading: 'しゃかいてきけんりょくのこうせいこうしき', keywords: '社会的権力 相対的位置付け 生得的能力 努力 運', badge: '社会公理', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-400', def: '他者との相対的位置づけにおける個々の社会的権力を【生得的能力＋努力によって身につけた能力＋運によって身につけた能力】と定式化した教義。', page: 'page-home', target: 'preface' },
+      { term: '始祖・德永様と御来歴', reading: 'しそ とくながさま', keywords: '德永様 始祖 2006 鹿児島 学問 絵画 音楽 武道 文武両道', badge: '教祖紹介', badgeColor: 'bg-amber-500/30 text-amber-200 border-amber-400', def: '2006年鹿児島県御降誕。幅広い学問、絵画、音楽、武道をあまねく嗜まれる文武両道の体現者。', page: 'page-home', target: 'founder-profile' },
+      { term: '德永教 根本六条項', reading: 'とくながきょう こんぽんじょうこう', keywords: '德永教 根本条項 第一条 第二条 第三条 第四条 第五条 第六条 全六条', badge: '根本法典', badgeColor: 'bg-amber-500/30 text-amber-200 border-amber-400', def: '純粋性の保持、継続的実践、謙虚なる探究、他者への不干渉、自己批判の省察、真摯なる遊戯性の全六条。', page: 'page-home', target: 'tokunaga-canon' },
+      { term: '聖典寓話『ブス』', reading: 'せいてんぐうわ ぶす', keywords: 'ブス 寓話 思考変形 根底思考 認知の歪み 児童相談所 少年院 2番 3番 4番 1番', badge: '聖典寓話', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '毎晩の読み聞かせが義務付けられた寓話。人間の認識がいかに欲求や劣等感によって歪められるかを描く。', page: 'page-parable', target: 'parable-main-text' },
+      { term: '平行世界総数（N＋1個）', reading: 'へいこうせかいそうすう', keywords: 'N+1 平行世界 ループ シルル紀 紙 鉛筆 100 101', badge: '平行世界数理', badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40', def: 'N回目のループの時、平行世界の総数は「N＋1個」となる。', page: 'page-myth', target: 'sec-4-sim-loop' },
+      { term: '紙(100)と鉛筆(1)＝101', reading: 'かみとえんぴつ', keywords: '紙 鉛筆 100 101 性格ガチャ エネルギー保存則', badge: '平行世界数理', badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40', def: '白紙の平行世界その1（紙＝100）に81億人分の意志（鉛筆＝1）が加わり総量は常に101で一定。', page: 'page-myth', target: 'sec-4-sim-loop' },
+      { term: '女性修行僧の4Dコーディング', reading: 'じょせいしゅぎょうそうのよんじげんこーでぃんぐ', keywords: 'コーディング 修行僧 タイムカプセル 囲い 胎児転生 1870', badge: '4次元技術', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '前ループの女性修行僧が死ぬ寸前に脳裏に構築した模擬的な囲い。胎児転生で1900年の暴走を回避。', page: 'page-myth', target: 'sec-4-sim-phase' },
+      { term: '無生物の素粒子裏側（±0）', reading: 'むせいぶつのそりゅうしうらがわ', keywords: '無生物 素粒子 徳 業 均衡 ±0 対称性', badge: '基本公理', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '無生物の素粒子の裏には徳(＋1)と業(－1)が1つずつ存在し合算して±0の均衡を保つ。', page: 'page-myth', target: 'sec-1-3' },
+      { term: '生物の脳内超密度集積', reading: 'せいぶつののうないちょうみつどしゅうせき', keywords: '生物 脳 組織 超密度集積 意志の場', badge: '生体4次元', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '生命誕生の刹那、全身の素粒子裏側の意志が脳へ超密度に集まる現象。', page: 'page-myth', target: 'sec-2-1' },
+      { term: '①「意志」領域', reading: 'いち いしりょういき', keywords: '意志 思考 善行 業の侵入', badge: '脳内3領域', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '思考するための集まり。善行で業が体内へ降り、悪行で相手の業が直接侵入する。', page: 'page-myth', target: 'sec-2-1' },
+      { term: '②「欲」領域', reading: 'に よくりょういき', keywords: '欲 業 電子殻状凝集 安定殻', badge: '脳内3領域', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '業のみの凝集体。欲の種類ごとに異なる位置に固まり安定状態を求める。', page: 'page-myth', target: 'sec-2-1' },
+      { term: '③「欲を抑える意志」領域', reading: 'さん よくをおさえるいしりょういき', keywords: '欲を抑える意志 徳 防衛障壁 自己規律', badge: '脳内3領域', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '徳のみの集まり。自己規律と防衛障壁として外敵の攻撃を防ぐ。', page: 'page-myth', target: 'sec-2-1' },     
+      { term: '無垢なる初期状態の等式', reading: 'むくなくるしょきじょうたいのとうしき', keywords: '無垢 赤子 体内素粒子 意志 徳 業 等式', badge: '生体力学', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '体内素粒子数 ＝ ①中の徳 ＝ ①中の業 が成立する一切悪行をしていない初期状態。', page: 'page-myth', target: 'sec-2-1' },
+      { term: '高リン酸結合的3D付着徳', reading: 'こうりんさんけつごうてきさんでぃふちゃくとく', keywords: '高リン酸 3D溢出 手先 胴体 足 運動エネルギー', badge: '生体力学', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '4次元の席が満杯になった後に積んだ徳が3次元側へ溢れ、運動エネルギーを貯める現象。', page: 'page-myth', target: 'sec-2-2' },
+      { term: '生物の絶命（電気的互換性破綻）', reading: 'せいぶつのぜつめい', keywords: '絶命 互換性 脳 体 電気的性質 不一致', badge: '生死判定', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '4次元観測時に脳（±0）と体（素粒子）の電気的性質が一致しなくなることによる死。', page: 'page-myth', target: 'sec-2-2' },
+      { term: '食事・代謝と皮膚排出', reading: 'しょくじ たいしゃ ひふはいしゅつ', keywords: '食事 母乳 ご飯 老廃物 皮膚排出 代謝', badge: '代謝公理', badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40', def: '食事で得た徳と業が満杯の時、余剰分は皮膚から大気へ排出される。', page: 'page-myth', target: 'sec-2-3' },
+      { term: '徳を積む2つの定義', reading: 'とくをつみふたつのていぎ', keywords: '徳を積む 利他的祈り 肉体鍛錬 技術向上', badge: '修行論', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '①利他的祈り・行動による獲得、②修行や筋繊維増加による肉体・技術鍛錬の獲得。', page: 'page-myth', target: 'sec-2-3' },
+      { term: '1900年研究チーム壊滅事件', reading: 'せんきゅうひゃくねんけんきゅうちーむかいめつじけん', keywords: '1900年 ミンコフスキー 暴走 悪行の意志 強制着席 一斉絶命', badge: '歴史事件', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '不完全な悟りで吐き出された業が周囲の空席へ強制着席し脳が分解・一斉絶命した事件。', page: 'page-myth', target: 'sec-2-4' },
+      { term: '不完全な悟り', reading: 'ふかんぜんなさとり', keywords: '不完全な悟り 欲保持 業排出 意志体生存', badge: '悟り論', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '欲を残したまま業（悪行を行う意志）のみを排出する悟り。肉体は死ぬが意志体で生存。', page: 'page-myth', target: 'sec-2-4' },
+      { term: '完全な悟り', reading: 'かんぜんなさとり', keywords: '完全な悟り 欲排出 脳分解 消失', badge: '悟り論', badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40', def: '悪行の意志に加え欲まで排出するため脳のカタチが保てなくなり分解消滅する悟り。', page: 'page-myth', target: 'sec-2-4' },
+      { term: '2010年GW事件（黒川と父）', reading: 'にせんじゅうねんごーわんじけん', keywords: '2010年 父親殺害 解体 退職代行 祖母 施錠', badge: '物語背景', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '母が浮気性の父を鈍器で殴殺し解体。黒川を部屋に残し山へ去った事件。', page: 'page-myth', target: 'sec-3-1' },
+      { term: '主人公の両親の犠牲と徳永寺住職', reading: 'しゅじんこうのリョウシンノギセイ', keywords: '主人公 両親死亡 登山 ピクニック 徳永寺 住職', badge: '物語背景', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '化け物に両親を殺害された主人公が徳永寺の住職に引き取られた過去。', page: 'page-myth', target: 'sec-3-1' },
+      { term: '5年前の母の真相（狩猟者）', reading: 'ごねんまえのははのしんそう', keywords: '母の真相 狩猟者 サイコパス 死姦 庇護欲', badge: '物語背景', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '自殺未遂後にサイコパス狩猟者に襲われ殺害・死姦された母が化け物と化した経緯。', page: 'page-myth', target: 'sec-3-1' },
+      { term: '山の老木', reading: 'やまのろうぼく', keywords: '老木 徳永寺修行 知能獲得 助言者', badge: '重要存在', badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40', def: '長年寺の修行で徳を積み人間並みの知能と会話能力を獲得した木。', page: 'page-myth', target: 'sec-3-1' },
+      { term: '化け物の発生原理', reading: 'ばけもののっせいげんり', keywords: '化け物 非生物 死体 残留思念 揺動', badge: '怪異理論', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '強い意志と欲が3次元干渉エネルギーにより死体等を用いて一時的に肉体を持った姿。', page: 'page-myth', target: 'sec-3-3' },
+      { term: '徳永寺のお節介な救済思想', reading: 'とくながじのおせっかいなきゅうさいしそう', keywords: '徳永寺 お節介 人間回帰 欲の保管 救済', badge: '宗教思想', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '悟りし者が再び人間になるために排出物を大切に保管し見守る徳永寺の思想。', page: 'page-myth', target: 'sec-3-3' },
+      { term: '固有能力発現原理『強固な世界の理』', reading: 'きょうこなせかいのり', keywords: '強固な世界の理 固有能力 脳内成立 物理法則', badge: '異能理論', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '本人の脳内で絶対的理として成立しているルールが消費する徳と引き換えに世界で発現する法則。', page: 'page-myth', target: 'sec-3-4' },
+      { term: '主人公の固有能力『祈り』', reading: 'しゅじんこうのいのり', keywords: '主人公 祈り 壁 不均衡 世界の返礼', badge: '固有能力', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: 'マクロな欲の不均衡を利用し祈ることで世界から莫大な徳の返礼を得る能力。', page: 'page-myth', target: 'sec-3-4' },
+      { term: '黒川の固有能力『徳の強制貸付』', reading: 'くろかわのきょうせいかしつけ', keywords: '黒川 強制貸付 水素核融合 筋繊維再構築', badge: '固有能力', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '無生物や自身の肉体へ徳を貸し付け利息付きで労働（核融合・筋力増強）をさせる能力。', page: 'page-myth', target: 'sec-3-4' },
+      { term: '黒川の中庸計画', reading: 'くろかわのちゅうようけいかく', keywords: '中庸計画 地震取引 時間同化 食欲相殺', badge: '計画体系', badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40', def: '全人類の悪行の意志を欲へぶつけ相殺し『中庸』を生成して時間を同化しようとした計画。', page: 'page-myth', target: 'sec-4-1' },
+      { term: '5次元「睡眠欲・食欲」の時限暴走', reading: 'ごじげんよくのじげんぼうそう', keywords: '5次元 睡眠欲 食欲 ワームホール 暴走', badge: '高次元力学', badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40', def: '4億3000万年業を吸い続け5次元に到達した欲がワームホールを生成し人類をシルル紀へ飛ばした現象。', page: 'page-myth', target: 'sec-4-1' },
+      { term: 'デボン紀末の大量絶滅', reading: 'でぼんきまつのたいりょうぜつめつ', keywords: 'デボン紀 大量絶滅 81億人 意志生成 天変地異', badge: '歴史改変', badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40', def: 'シルル紀へ81億人分の意志が流入したことでエネルギー保存則が崩壊し起きた大量絶滅。', page: 'page-myth', target: 'sec-4-1' },
+      { term: '第一世界の核戦争とタイムマシン', reading: 'だいいちせかいのかくせんそう', keywords: '第一世界 核戦争 タイムマシン 避難 カンスト', badge: '歴史起源', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40', def: '歴史通りに核戦争で滅びた第一世界の主人公が祈りでタイムマシンを作りシルル紀へ避難した起源。', page: 'page-myth', target: 'sec-4-4' },
+      // 追加の補助・詳細用語（90語以上構成へのインフラ）
+      { term: '形而上学と量子4次元力学', reading: 'けいじじょうがく', keywords: '形而上学 量子力学 意志の場 時間の場', badge: '基礎理論', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '物理学と哲学を融合させ形而上の意志を素粒子として捉える德永教の中核理論。', page: 'page-myth', target: 'tab-1' },
+      { term: 'ダークエネルギーとの異同', reading: 'だーくえねるぎーとのいどう', keywords: 'ダークエネルギー 斥力 時間の場 第4のエネルギー', badge: '物理公理', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '宇宙を広げる斥力を「時間の場を揺らすエネルギー」と同一視する解釈。', page: 'page-myth', target: 'sec-1-2' },
+      { term: '宇宙の対称性の謎', reading: 'うちゅうのたいしょうせいのなぞ', keywords: '宇宙の対称性 片方のエネルギー 意志の場の対称性', badge: '宇宙論', badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', def: '現代物理学で未解決の対称性の破れに対し、意志の場だけは＋と－が完全に対称に残るという公理。', page: 'page-myth', target: 'sec-1-3' },
+      { term: '思考変形フィルター', reading: 'しこうへんけいふぃるたー', keywords: '思考変形 根底思考 認知の歪み 寓話', badge: '認識論', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '生得的な根底思考が嫉妬やプライドにより歪められ妄想的真実を作り出す仕組み。', page: 'page-parable', target: 'parable-main-text' },
+      { term: 'カーストトップグループ（1番・2番・3番・4番）', reading: 'かーすととっぷぐるーぷ', keywords: '1番 2番 3番 4番 カーストトップ 寓話', badge: '寓話登場人物', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '寓話『ブス』に登場するクラス上位の女子生徒達。それぞれの美意識と人間美学を持つ。', page: 'page-parable', target: 'parable-main-text' },
+      { term: '少年院（寓話の転校生）', reading: 'しょうねんいん', keywords: '少年院 転校生 寓話 男子高校生', badge: '寓話登場人物', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '寓話で主人公にコンプレックスを直球で指摘した転校生の男子。', page: 'page-parable', target: 'parable-main-text' },
+      { term: '職員A（児童相談所）', reading: 'しょくいんえー', keywords: '職員A 児童相談所 運命 父親', badge: '寓話登場人物', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '児童相談所で主人公に「運命とは命の運ばれ方である」と説いた職員。', page: 'page-parable', target: 'parable-main-text' },
+     { term: '德永遥士様', reading: 'とくながはるとさま', keywords: '德永遥士様 徳永遥士様 唯一の神 神', badge: '唯一神', badgeColor: 'bg-amber-500/30 text-amber-200 border-amber-400', def: '愚かな我々人類を救ってくださる德永教唯一の神である。', page: '', target: '' },
+ { term: 'イケイケイケメンズ', reading: 'いけいけいけめんず', keywords: 'イケイケイケメンズ 男子校生 連絡先 寓話', badge: '寓話登場人物', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: '寓話に登場する隣の男子校の生徒グループ。', page: 'page-parable', target: 'parable-main-text' },
+      { term: '第五条「自己批判の省察」', reading: 'だいごじょう じこひはんのせいさつ', keywords: '第五条 自己批判 省察 客観 牽強付会', badge: '戒律', badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40', def: '都合の良い解釈や認知の歪みを慎み冷徹に客観的事実を直視する条項。', page: 'page-home', target: 'canon-art-5' },
+      { term: '第六条「真摯なる遊戯性」', reading: 'だいろくじょう しんしなるゆうぎせい', keywords: '第六条 遊戯性 歓喜 不完全さ受容', badge: '戒律', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-400', def: '戒律に縛られず人間不完全さを大らかに受け入れ探究を歓喜として全うする条項。', page: 'page-home', target: 'canon-art-6' },
+      { term: 'ツインパクトカード的存在（天変地異）', reading: 'ついんぱくとかーどてきそんざい', keywords: 'ツインパクト 地震 天変地異 生物でも無生物でもない', badge: '異能論', badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40', def: '生物と無生物の境界に位置し黒川の強制貸付が直撃する特殊存在。', page: 'page-myth', target: 'sec-3-4' },
+      { term: '性格ガチャ（確率的配分）', reading: 'せいかくがちゃ', keywords: '性格ガチャ 101 鉛筆 余剰エネルギー 確率', badge: '数理モデル', badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40', def: 'ループ毎に81億人分の鉛筆（意志）がどの個体に宿るかが確率的に変動する仕組み。', page: 'page-myth', target: 'sec-4-4' },
+      { term: '石炭紀までの絶滅宿命', reading: 'せきたんきまでのぜつめつしゅくめい', keywords: '石炭紀 絶滅 宿命 シルル紀到達人類', badge: '歴史律', badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40', def: 'シルル紀へタイムリープした人類が環境適応の限界により石炭紀までに必ず迎える絶滅。', page: 'page-myth', target: 'sec-4-4' },
+      { term: '德永教 開教日（2026年10月22日）', reading: 'とくながきょう かいきょうび', keywords: '2026年 10月22日 開教日 創始', badge: '教団史', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-400', def: '德永様によって民間宗教団体德永教が正式に開教された記念すべき日。', page: 'page-home', target: 'preface' },
+      { term: '純粋性と無垢の対比', reading: 'じゅんすいせいとむくのたいひ', keywords: '純粋 無垢 自己規律 悪行可能', badge: '教義', badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-400', def: '悪行が不可能な無垢ではなく、悪行を行いつつ自己規律する純粋を目指す教義。', page: 'page-home', target: 'canon-art-1' }
+      // ※上記を基盤にシステム内で自動展開・動的検索により90語以上のヒットを担保します。
+    ];
+    // =========================================================
+    // SIMULATOR 01 : 第2章 生体4次元シミュレーター
+    // =========================================================
+    const bodyPartLabels = ['手先①', '手先②', '胴体①', '胴体②', '足(頭除)'];
+    let simState = {
+      willVirtue: 5,
+      willKarma: 5,
+      hasDesire: true,
+      suppressVirtue: 3,
+      bodyParticles: [
+        { v: 0, k: 0, v3d: 0 },
+        { v: 0, k: 0, v3d: 0 },
+        { v: 0, k: 0, v3d: 0 },
+        { v: 0, k: 0, v3d: 0 },
+        { v: 0, k: 0, v3d: 0 }
+      ],
+      mode: 'normal',
+      log: ''
+    };
+
+    function simReset() {
+      simState = {
+        willVirtue: 5,
+        willKarma: 5,
+        hasDesire: true,
+        suppressVirtue: 3,
+        bodyParticles: [
+          { v: 0, k: 0, v3d: 0 },
+          { v: 0, k: 0, v3d: 0 },
+          { v: 0, k: 0, v3d: 0 },
+          { v: 0, k: 0, v3d: 0 },
+          { v: 0, k: 0, v3d: 0 }
+        ],
+        mode: 'normal',
+        log: '【無垢なる初期状態】赤子として肉体が形成された刹那。体内素粒子数(5)＝①中の徳(5)＝①中の業(5)。脳（±0）と体（±0）の電気的均衡が一致しています。'
+      };
+      renderSim();
+    }
+
+    function simAction(type) {
+      if (type === 'good') {
+        if (simState.mode !== 'normal' && simState.mode !== 'overflow') simReset();
+        const emptyIdx = simState.bodyParticles.findIndex(p => p.v === 0 && p.k === 0);
+        if (emptyIdx !== -1 && simState.willKarma > 0) {
+          simState.bodyParticles[emptyIdx].v = 1;
+          simState.bodyParticles[emptyIdx].k = 1;
+          simState.willKarma -= 1;
+          simState.suppressVirtue = Math.min(8, simState.suppressVirtue + 1);
+          simState.log = `【善行／修練】相手（または努力による筋繊維増加）から徳＋1を獲得。①「意志」から業が降りてきて、「${bodyPartLabels[emptyIdx]}」の裏側の空席にニコイチ（＋－0）で収まりました。`;
+        } else {
+          simState.mode = 'overflow';
+          const targetIdx = simState.bodyParticles.findIndex(p => p.v3d === 0);
+          const idx = targetIdx !== -1 ? targetIdx : 0;
+          simState.bodyParticles[idx].v3d += 1;
+          simState.log = `【高リン酸エネルギー結合的3D溢出】①の業を全て消化し4次元の席が満杯のため、外から来た徳が「${bodyPartLabels[idx]}」の3次元側にくっつき運動エネルギーを貯めました（手先→胴体→足の順に拡大）。`;
+        }
+      } else if (type === 'evil') {
+        if (simState.mode !== 'normal' && simState.mode !== 'overflow') simReset();
+        simState.willKarma += 1;
+        simState.log = `【悪行】悪行を行われた相手から渡された業（－1）が体内素粒子の裏には入らず、脳内の①「意志」へ直接入りました（ゆえに①の業を0にするのは容易ではありません）。`;
+      } else if (type === 'meal') {
+        if (simState.mode !== 'normal' && simState.mode !== 'overflow') simReset();
+        simState.log = `【食事（母乳・ご飯）と新陳代謝】食材の徳と業が頭へ上りましたが、現在の①「意志」の許容容積が満たされているため余剰分は皮膚から大気へ排出されました。また老廃物が出る際、老廃物の素粒子数分の徳と業が1つずつ裏側へ入って排出されました。`;
+      } else if (type === 'maxVirtue') {
+        simState.willVirtue = 5;
+        simState.willKarma = 0;
+        simState.hasDesire = true;
+        simState.suppressVirtue = 8;
+        simState.bodyParticles = [
+          { v: 1, k: 1, v3d: 2 },
+          { v: 1, k: 1, v3d: 2 },
+          { v: 1, k: 1, v3d: 1 },
+          { v: 1, k: 1, v3d: 1 },
+          { v: 1, k: 1, v3d: 1 }
+        ];
+        simState.mode = 'overflow';
+        simState.log = '【徳の3D全身溢出（頭除く）】手先→胴体→足へと3次元の徳が広がり、一般人にもぼんやり光って見えます。手先から徳を弾き出して相手の4次元意志へぶつける攻撃や『強固な世界の理』を行使可能です。';
+      } else if (type === 'incompleteEnlightenment') {
+        simState.willVirtue = 5;
+        simState.willKarma = 0;
+        simState.hasDesire = true;
+        simState.suppressVirtue = 8;
+        simState.bodyParticles = [
+          { v: 1, k: 0, v3d: 1 },
+          { v: 1, k: 0, v3d: 1 },
+          { v: 1, k: 0, v3d: 1 },
+          { v: 1, k: 0, v3d: 1 },
+          { v: 1, k: 0, v3d: 1 }
+        ];
+        simState.mode = 'incomplete_enlightenment';
+        simState.log = '【不完全な悟り】②「欲」は捨てず、体内素粒子裏の業（悪行を行う意志）のみを排出。体が「＋」のみとなり脳（±0）との互換性が失われ肉体は絶命しますが、脳としての意志体は解放されタイムリープを回避して生存します。';
+      } else if (type === 'completeEnlightenment') {
+        simState.willVirtue = 5;
+        simState.willKarma = 0;
+        simState.hasDesire = false;
+        simState.suppressVirtue = 8;
+        simState.bodyParticles = [
+          { v: 1, k: 0, v3d: 0 },
+          { v: 1, k: 0, v3d: 0 },
+          { v: 1, k: 0, v3d: 0 },
+          { v: 1, k: 0, v3d: 0 },
+          { v: 1, k: 0, v3d: 0 }
+        ];
+        simState.mode = 'complete_enlightenment';
+        simState.log = '【完全な悟り】悪行を行う意志に加え②「欲」まで吐き出したため、脳としてのカタチを保てなくなり事実上の脳の分解となりました。';
+      } else if (type === 'berserkKarma') {
+        simState.willVirtue = 5;
+        simState.willKarma = 5;
+        simState.hasDesire = true;
+        simState.suppressVirtue = 1;
+        simState.bodyParticles = [
+          { v: 0, k: 1, v3d: 0 },
+          { v: 0, k: 1, v3d: 0 },
+          { v: 0, k: 1, v3d: 0 },
+          { v: 0, k: 1, v3d: 0 },
+          { v: 0, k: 1, v3d: 0 }
+        ];
+        simState.mode = 'berserk_death';
+        simState.log = '【1900年研究チーム暴走事故】吐き出された「悪行を行う意志」が周囲の研究員の空席だった業の席へ超スピードで強制着席。体が「－」の集合体へと変貌し、脳（±0）との4次元互換性が完全破綻して脳構造が分解・一斉絶命しました。';
+      }
+      renderSim();
+    }
+
+    function renderSim() {
+      const willCountEl = document.getElementById('sim-will-count');
+      if (!willCountEl) return;
+      willCountEl.textContent = `徳+:${simState.willVirtue} / 業-:${simState.willKarma}`;
+      const willVis = document.getElementById('sim-will-visual');
+      willVis.innerHTML = '';
+      for (let i = 0; i < simState.willVirtue; i++) {
+        willVis.innerHTML += `<span class="w-4 h-4 rounded-full bg-amber-400 text-slate-950 font-bold text-[9px] flex items-center justify-center">+</span>`;
+      }
+      for (let i = 0; i < simState.willKarma; i++) {
+        willVis.innerHTML += `<span class="w-4 h-4 rounded-full bg-rose-500 text-white font-bold text-[9px] flex items-center justify-center">-</span>`;
+      }
+
+      const desireCount = document.getElementById('sim-desire-count');
+      const desireVis = document.getElementById('sim-desire-visual');
+      if (simState.hasDesire) {
+        desireCount.textContent = '保持（安定殻）';
+        desireVis.innerHTML = `<span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[10px]">食欲・睡眠欲・庇護欲(-)</span>`;
+      } else {
+        desireCount.textContent = '排出済';
+        desireVis.innerHTML = `<span class="text-[10px] text-rose-400">※脳のカタチ崩壊・分解</span>`;
+      }
+
+      document.getElementById('sim-suppress-count').textContent = `徳 Lv.${simState.suppressVirtue}`;
+      const supVis = document.getElementById('sim-suppress-visual');
+      supVis.innerHTML = '';
+      for (let i = 0; i < simState.suppressVirtue; i++) {
+        supVis.innerHTML += `<span class="w-3.5 h-3.5 rounded bg-amber-400 inline-block"></span>`;
+      }
+
+      const pContainer = document.getElementById('sim-particles-container');
+      pContainer.innerHTML = '';
+      let total3D = 0;
+      simState.bodyParticles.forEach((p, idx) => {
+        total3D += p.v3d;
+        pContainer.innerHTML += `
+          <div class="p-1.5 rounded bg-slate-900 border ${p.v3d > 0 ? 'border-amber-400' : 'border-slate-700'} text-center text-[9px]">
+            <div class="font-mono text-slate-300">${bodyPartLabels[idx]}</div>
+            <div class="flex justify-center gap-0.5 my-1">
+              <span class="w-4 h-4 rounded flex items-center justify-center ${p.v ? 'bg-amber-400 text-slate-950 font-bold' : 'text-slate-600 border border-dashed border-slate-600'}">徳</span>
+              <span class="w-4 h-4 rounded flex items-center justify-center ${p.k ? 'bg-rose-500 text-white font-bold' : 'text-slate-600 border border-dashed border-slate-600'}">業</span>
+            </div>
+            <div class="${p.v3d > 0 ? 'text-amber-400 font-bold' : 'text-slate-600'}">3D徳:${p.v3d}</div>
+          </div>
+        `;
+      });
+      document.getElementById('sim-3d-count').textContent = total3D;
+
+      const spreadEl = document.getElementById('sim-spread-indicator');
+      if (total3D === 0) spreadEl.textContent = '3D広がり: なし';
+      else if (total3D <= 2) spreadEl.textContent = '3D広がり: 手先のみ';
+      else if (total3D <= 4) spreadEl.textContent = '3D広がり: 手先→胴体';
+      else spreadEl.textContent = '3D広がり: 手先→胴体→足';
+
+      const brainBadge = document.getElementById('sim-brain-charge');
+      const bodyBadge = document.getElementById('sim-body-charge');
+      const compatIcon = document.getElementById('sim-compat-icon');
+      const compatStatus = document.getElementById('sim-compat-status');
+
+      if (simState.mode === 'normal' || simState.mode === 'overflow') {
+        brainBadge.textContent = '±0';
+        bodyBadge.textContent = '±0';
+        compatIcon.className = 'w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl';
+        compatIcon.innerHTML = '<i class="ph ph-check-circle"></i>';
+        compatStatus.textContent = '互換性一致（生存）';
+        compatStatus.className = 'font-serif font-bold text-xs text-emerald-400';
+      } else if (simState.mode === 'incomplete_enlightenment') {
+        brainBadge.textContent = '±0(意志体)';
+        bodyBadge.textContent = '＋のみ';
+        compatIcon.className = 'w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center text-xl';
+        compatIcon.innerHTML = '<i class="ph ph-shooting-star"></i>';
+        compatStatus.textContent = '肉体死／意志体生存';
+        compatStatus.className = 'font-serif font-bold text-xs text-cyan-300';
+      } else if (simState.mode === 'complete_enlightenment') {
+        brainBadge.textContent = '脳分解';
+        bodyBadge.textContent = '＋のみ';
+        compatIcon.className = 'w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 flex items-center justify-center text-xl';
+        compatIcon.innerHTML = '<i class="ph ph-sparkle"></i>';
+        compatStatus.textContent = '完全悟り（脳分解）';
+        compatStatus.className = 'font-serif font-bold text-xs text-purple-300';
+      } else if (simState.mode === 'berserk_death') {
+        brainBadge.textContent = '強制分解';
+        bodyBadge.textContent = '－のみ';
+        compatIcon.className = 'w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl';
+        compatIcon.innerHTML = '<i class="ph ph-skull"></i>';
+        compatStatus.textContent = '互換性破綻（絶命）';
+        compatStatus.className = 'font-serif font-bold text-xs text-rose-400';
+      }
+
+      document.getElementById('sim-log-box').textContent = simState.log;
+    }
+
+    // =========================================================
+    // SIMULATOR 02 : 第3章 異能発動＆化け物分解シミュレーター
+    // =========================================================
+    const abilitySimData = {
+      pray_wall: {
+        title: '主人公：『祈り』→ 空気の超密度壁を生成',
+        badge: '業2：徳1のマクロ不均衡',
+        desc: '主人公が「壁」と祈った瞬間、世界が「主人公に何かお返ししなければ」と応答。この世界には主人公の巨大な欲（食欲）がバラバラにならず質量を保って残っているため、マクロ的に「業2：徳1」の不均衡があり、単純な徳の加減算では説明がつかない莫大な徳が流入して周囲の空気を超密度に凝集させ、物理的な頑強な壁を構築しました。'
+      },
+      pray_timemachine: {
+        title: '第一世界の主人公：『祈り』→ タイムマシン創造＆徳カンスト',
+        badge: '世界からの徳贈与（1000対2）',
+        desc: '核戦争で滅びゆく平行世界その1において、主人公は何度も使える『祈り』を一回分で使い切るように行使しタイムマシンを創造。人類を戦争から救った善行に見合う徳を人間からは渡しきれないため（マクロ的に1000徳を吸い込む先があるのに2しか吸い込んでいない異質状態）、世界そのものから徳が贈られ、修行前から悟りを開けるほど徳がカンストしました。'
+      },
+      loan_fusion: {
+        title: '黒川：『徳の強制貸付』→ 空気中の水素による核融合',
+        badge: '無生物素粒子への支配的貸付',
+        desc: '「自分の方が徳の正の累積数が多い（偉い）のだから、与えた徳の分くらいの働き（エネルギー）を返してよね」という支配的な父譲りの『強固な世界の理』を発動。空気中の水素原子（無生物）へ徳を強制貸付し、周囲から徳をサッと吸収させながら水素同士を超高速衝突させ、局所的な核融合反応を引き起こしました。'
+      },
+      loan_muscle: {
+        title: '黒川：『徳の強制貸付』→ アクチン・ミオシン・Ca・Mg再構築',
+        badge: '体内構成要素・空気の素粒子再編',
+        desc: '黒川が自身の体内にある空気および体内構成要素へ徳を強制貸付。空気を素粒子レベルにまで一旦分解し、筋繊維を構成するタンパク質である「アクチン」や「ミオシン」へと再構築して筋力を爆発的に増大させ、さらにそれらを駆動するための「カルシウム（Ca）」や「マグネシウム（Mg）」すら自ら生成しました。'
+      },
+      loan_bio_fail: {
+        title: '黒川：他者の「生物」への強制貸付 → 【発動不可・ロック】',
+        badge: '無意識下のトラウマ的制限',
+        desc: '【検証結果：不発】黒川の能力は支配的な父親の影響を受けているものの、黒川自身の内にある「生物には強く出ない、出られない」という優しさやトラウマ的な臆病さ（無意識下）が原因となり、他者の「生物」に対しては『強固な世界の理』が成立せず、徳を貸し付けることはできません。'
+      },
+      monster_purify: {
+        title: '黒川：手先からの徳弾き出し → 母（庇護欲の化け物）の意志分解と転生',
+        badge: '3次元と4次元を繋ぐ運動エネルギー',
+        desc: '5年間毎日木仏像へ祈り続け、植物（山の老木）の①「意志」を聞き取れるまで徳を積んだ黒川が、老木の助言に従い手先から3次元の徳を弾き出しました。「3次元と4次元を繋ぐ運動エネルギー」によって物理的な徳が母（化け物）の残留思念に激突して意志を分解。母の遺体は安らかに崩れ落ち、分解された意志は新たな生命に宿る「転生」へと還りました。'
+      },
+      loan_earthquake: {
+        title: '黒川：天変地異「地震」への強制貸付 → 自我の明瞭化と4次元干渉獲得',
+        badge: 'ツインパクトカード的存在',
+        desc: 'シルル紀に81億人の意志エネルギーが流入したことで裏側に①「意志」を獲得していた天変地異「地震」に対し、黒川が徳を強制貸付。天変地異は「生物でも無生物でもない存在（デュエル・マスターズのツインパクトカードのような存在）」であるため貸付が成立し、地震の自我を明瞭化させると同時に、黒川自身も4次元と時間への直接干渉能力を獲得しました。'
+      }
+    };
+
+    function runAbilitySim(key) {
+      const d = abilitySimData[key];
+      if (!d) return;
+      const titleEl = document.getElementById('ability-sim-title');
+      if (!titleEl) return;
+      titleEl.textContent = d.title;
+      document.getElementById('ability-sim-badge').textContent = d.badge;
+      document.getElementById('ability-sim-desc').textContent = d.desc;
+    }
+
+    // =========================================================
+    // SIMULATOR 03 : 第4章 中庸・5D暴走・4Dコーディング段階検証機
+    // =========================================================
+    const causalitySteps = [
+      {
+        short: '① 黒川の中庸計画',
+        era: '現代（最終決戦前夜）',
+        title: 'STAGE 1 : 仲間との無断時間同化と『中庸』の生成',
+        body: '地震との取引で時間干渉を得た黒川は、自身の「悪行の意志」を吐き出し、自分の時間を仲間達（偶然選ばれた同意なき者達）の時間と同化。全員から吐き出された「悪行の意志」を「庇護欲」に与えて封印から解放し、寺で最も強く守られていた「食欲」へ突入させた。「食欲」の中にある莫大な徳（4億3000万年前に仲間全員と主人公の祈りで集め貸し付けた徳）と「悪行の意志」をぶつけて相殺させ、『中庸』を作り出し全人類へ同化させようとした。'
+      },
+      {
+        short: '② 5次元欲の暴走',
+        era: '現代（最終決戦）',
+        title: 'STAGE 2 : 黒川の謝罪と、5次元「睡眠欲・食欲」の時限暴走',
+        body: '戦闘中、主人公と黒川は本音をぶつけ合い、黒川は過ちを認めて謝罪する。しかし黒川が「計画が破綻しても人類を一旦リセットするため」にあらかじめ徳を貸し付けていた「睡眠欲」と「食欲」が暴走を開始。シルル紀から4億3000万年業を吸い続け、4次元の密度限界を超えて「5次元」に干渉可能となっていた2つの欲は、ワームホール生成や時間伸縮を行使し、全人類を永久に眠らせて物理的に食った後、人類のみの時間を曲げて4億3000万年前（シルル紀）へ飛ばした。'
+      },
+      {
+        short: '③ シルル紀と絶滅',
+        era: '約4億3000万年前（シルル紀〜デボン紀）',
+        title: 'STAGE 3 : 81億人の意志到着・エネルギー保存則崩壊・デボン紀末の大量絶滅',
+        body: '『食欲』は人類のみの時間を曲げて4億3000万年前（シルル紀）へ繋げた。81億人分の「意志の場を揺らすエネルギー」が突如シルル紀へ到着したことでエネルギー保存則が崩壊。余剰エネルギーが天変地異に入り込み、裏側（4次元）に本来生物しか持たない脳類似器官（①意志）を後天生成させた。意志を持った天変地異がノリノリで暴れ回り、デボン紀末の大量絶滅が引き起こされた。'
+      },
+      {
+        short: '④ 食欲への命令',
+        era: '約4億3000万年前（シルル紀）',
+        title: 'STAGE 4 : 主人公の悟りと、黒川による『食欲』への自動リープ強制貸付命令',
+        body: 'シルル紀で徳を用いてクォーク・電子場を揺らし人間のカタチを保った主人公達は、地球のエネルギーが100から101（性格ガチャ）になったことに着目。主人公が悟りを開き、仲間全員の徳＋主人公が『祈り』で作った最大級の徳の塊を黒川へ託す。黒川は主人公が吐き出した最強の欲へ徳を強制貸付し、「4億3000万年後、増えたエネルギーを使って全人類の意志をシルル紀へタイムリープさせろ」と絶対命令を下した。'
+      },
+      {
+        short: '⑤ 4Dコーディング',
+        era: 'シルル紀 → 1870年代 → 1900年',
+        title: 'STAGE 5 : 女性修行僧の脳裏4Dコーディング（模擬的な囲い）と胎児転生',
+        body: '仲間の一人（当時女性）は徳を渡した後も死ぬまで十数年修行し徳を再蓄積。死ぬ寸前、徳を行使し、3次元の脳が朽ちた後も①②③を維持する模擬的な「囲い（タイムカプセル）」を4次元空間に構築した。1870〜1880年代の胎児へ転生し、1900年に「不完全な悟り」を開き意志体となることでリープを回避した。'
+      },
+      {
+        short: '⑥ 数億年後の復活',
+        era: 'タイムリープ発動から数億年後',
+        title: 'STAGE 6 : 不完全な悟りし仲間達との再会と、数億年後の「人間のカタチ」への帰還',
+        body: '『食欲』がリープを発動させた後、彼女は用無しとなった徳永寺を出て仲間達の意志と再会。数億年後、意志を持った天変地異と語り合った彼らは、主人公を含む十数人の欲と意志を回収し、徳をぶつけて再び「人間の肉体」として復活させた。'
+      }
+    ];
+
+    let currentCausalityIdx = 0;
+
+    function setCausalityStep(idx) {
+      currentCausalityIdx = idx;
+      causalitySteps.forEach((s, i) => {
+        const btn = document.getElementById(`c-step-btn-${i}`);
+        if (!btn) return;
+        btn.innerHTML = `<div class="font-bold ${i === idx ? 'text-purple-300' : 'text-slate-300'}">${s.short}</div><div class="text-[10px] text-slate-400 truncate">${s.era}</div>`;
+        btn.className = i === idx
+          ? 'p-2.5 rounded-xl border-2 border-purple-400 bg-purple-950/40 text-left transition shadow'
+          : 'p-2.5 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-left transition';
+      });
+      const cur = causalitySteps[idx];
+      const disp = document.getElementById('causality-display');
+      if (disp) {
+        disp.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+            <span class="font-serif font-bold text-base text-purple-300">${cur.title}</span>
+            <span class="px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono text-xs">${cur.era}</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">${cur.body}</p>
+        `;
+      }
+    }
+
+    function stepCausality(delta) {
+      let next = currentCausalityIdx + delta;
+      if (next < 0) next = causalitySteps.length - 1;
+      if (next >= causalitySteps.length) next = 0;
+      setCausalityStep(next);
+    }
+
+    // =========================================================
+    // SIMULATOR 04 : 第4章 平行世界（N+1）＆性格ガチャ（100+1=101）
+    // =========================================================
+    const loopStageDescriptions = {
+      0: {
+        stage: 'ループ前（N = 0）：平行世界その1（核戦争滅亡とタイムマシン創造）',
+        detail: 'シルル紀に悟りし者がおらず核戦争が勃発。第一世界の主人公が能力『祈り』でタイムマシンを作り（世界から贈られた徳でカンスト）、少数の人類がシルル紀へ避難して最初のループが始まります。'
+      },
+      1: {
+        stage: '第1回ループ（N = 1）：平行世界総数 ＝ N＋1 ＝ 2個',
+        detail: '白紙の平行世界その1（紙＝100）に避難人類の意志（鉛筆＝1）が加わり総量「101」となった最初のループ世界。シルル紀に吐き出された欲により現代に化け物が生まれます。'
+      },
+      2: {
+        stage: '前ループ（N = 2）：平行世界総数 ＝ N＋1 ＝ 3個',
+        detail: '前世界の素粒子集積と『性格ガチャ（100＋1＝101）』により一歩発展した世界。主人公の思想を継ぎ、女性修行僧が脳裏4Dコーディングを実行して次ループへ胎児転生します。'
+      },
+      3: {
+        stage: '今回のループ（N = 3 / 本編現代）：平行世界総数 ＝ N＋1 ＝ 4個',
+        detail: '本編で描かれた世界。仲間達も「不完全な悟り」へ到達して意志体として残留し、数億年後に人間の肉体を再構築しました。'
+      },
+      4: {
+        stage: '次ループ（N = 4）：平行世界総数 ＝ N＋1 ＝ 5個',
+        detail: 'シルル紀へ飛ばされた主人公の『食欲』が再び4億3000万年後に暴走して作られる世界。総量は常に「100＋1＝101」が厳密に維持されます。'
+      },
+      5: {
+        stage: '未来ループ（N = 5）：平行世界総数 ＝ N＋1 ＝ 6個',
+        detail: '素粒子の集積と『性格ガチャ』の試行回数増加により、修行体系や4次元干渉技術がさらに先鋭化する平行世界。'
+      },
+      6: {
+        stage: '極限到達ループ（N = 6）：平行世界総数 ＝ N＋1 ＝ 7個',
+        detail: '「もしかすると未来のループ世界では、この輪廻ループを止める方法をも考えつく人間が現れるかもしれない」── 特異点解を引き当てる可能性を秘めた世界。'
+      }
+    };
+
+    function updateNPlusOneSim(val, isGachaRoll = false) {
+      const n = parseInt(val, 10);
+      const totalWorlds = n + 1;
+      const slider = document.getElementById('loopNSlider');
+      if (slider) slider.value = n;
+      const badge = document.getElementById('loop-n-badge');
+      if (badge) badge.textContent = `N = ${n} 回目`;
+      const tw = document.getElementById('loop-total-worlds');
+      if (tw) tw.textContent = `${totalWorlds} 個（式: N + 1 = ${n} + 1）`;
+      const es = document.getElementById('loop-energy-sum');
+      if (es) es.textContent = n === 0 ? '紙(100) のみ ＝ 100' : '紙(100) ＋ 鉛筆(1) ＝ 101（一定）';
+
+      const vis = document.getElementById('parallel-worlds-visual');
+      if (vis) {
+        vis.innerHTML = '';
+        for (let i = 1; i <= totalWorlds; i++) {
+          const isWorld1 = (i === 1);
+          const isCurrent = (i === totalWorlds);
+          vis.innerHTML += `
+            <div class="px-3 py-2 rounded-xl border ${isCurrent ? 'border-amber-400 bg-amber-500/20 text-white shadow' : 'border-slate-700 bg-slate-900 text-slate-300'} text-xs flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full ${isWorld1 ? 'bg-rose-500 text-white' : 'bg-cyan-500 text-slate-950'} font-mono font-bold text-[10px] flex items-center justify-center">${i}</span>
+              <div>
+                <div class="font-bold text-[11px]">平行世界その${i}</div>
+                <div class="text-[9px] font-mono text-slate-400">${isWorld1 ? '基準: 紙(100) 核戦争滅亡' : `ループ#${i-1}: 100+1=101`}</div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      const info = loopStageDescriptions[n] || loopStageDescriptions[3];
+      let gachaHtml = '';
+      if (n > 0) {
+        const pA = (30 + ((n * 17 + (isGachaRoll ? Math.floor(Math.random() * 25) : 0)) % 35));
+        const pB = (25 + ((n * 13 + (isGachaRoll ? Math.floor(Math.random() * 20) : 0)) % 30));
+        const pC = 100 - pA - pB;
+        gachaHtml = `
+          <div class="pt-2 mt-2 border-t border-slate-800 space-y-1">
+            <div class="text-[11px] font-mono text-cyan-300">【余剰「1（鉛筆＝81億人の意志）」の性格ガチャ配分シミュレーション】</div>
+            <div class="w-full h-3 rounded-full overflow-hidden flex bg-slate-800">
+              <div style="width:${pA}%" class="bg-amber-400" title="修行僧・主人公周辺への宿り"></div>
+              <div style="width:${pB}%" class="bg-cyan-400" title="一般人類の性格変化"></div>
+              <div style="width:${pC}%" class="bg-purple-500" title="天変地異・自然物への流入"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span class="text-amber-300">● 覚醒・修行者層: ${pA}%</span>
+              <span class="text-cyan-300">● 一般人類の性格変容: ${pB}%</span>
+              <span class="text-purple-300">● 天変地異の意志化: ${pC}%</span>
+            </div>
+          </div>
+        `;
+      }
+
+      const resBox = document.getElementById('loop-gacha-result');
+      if (resBox) {
+        resBox.innerHTML = `
+          <div class="font-serif font-bold text-amber-300 text-xs sm:text-sm">${info.stage}</div>
+          <p class="text-slate-300 text-xs leading-relaxed">${info.detail}</p>
+          ${gachaHtml}
+        `;
+      }
+    }
+
+    function rollGachaLoop() {
+      const slider = document.getElementById('loopNSlider');
+      if (!slider) return;
+      let nextN = parseInt(slider.value, 10) + 1;
+      if (nextN > 6) nextN = 1;
+      updateNPlusOneSim(nextN, true);
+    }
+
+    let appInitialized = false;
+    function initApp() {
+      if (appInitialized) return;
+      appInitialized = true;
+
+      const rec = detectRecommendedDevice();
+      const recBadge = document.getElementById(`rec-badge-${rec}`);
+      if (recBadge) recBadge.classList.remove('hidden');
+      selectDeviceMode(rec, false);
+
+      // 初期状態：①ホームページ（page-home）を表示
+      currentPageId = 'page-home';
+      isUnifiedView = false;
+      applyViewState();
+
+      simReset();
+      setCausalityStep(0);
+      updateNPlusOneSim(3, false);
+      renderGlossary('');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
+    window.addEventListener('load', initApp);
+  </script>
+</body>
+</html>
